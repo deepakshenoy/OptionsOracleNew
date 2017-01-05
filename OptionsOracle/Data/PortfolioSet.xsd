@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="PortfolioSet" targetNamespace="http://tempuri.org/PortfolioSet.xsd" xmlns:mstns="http://tempuri.org/PortfolioSet.xsd" xmlns="http://tempuri.org/PortfolioSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="PortfolioSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="PortfolioSet" msprop:Generator_DataSetName="PortfolioSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="PortfolioTable" msprop:Generator_UserTableName="PortfolioTable" msprop:Generator_RowDeletedName="PortfolioTableRowDeleted" msprop:Generator_RowChangedName="PortfolioTableRowChanged" msprop:Generator_RowClassName="PortfolioTableRow" msprop:Generator_RowChangingName="PortfolioTableRowChanging" msprop:Generator_RowEvArgName="PortfolioTableRowChangeEvent" msprop:Generator_RowEvHandlerName="PortfolioTableRowChangeEventHandler" msprop:Generator_TableClassName="PortfolioTableDataTable" msprop:Generator_TableVarName="tablePortfolioTable" msprop:Generator_RowDeletingName="PortfolioTableRowDeleting" msprop:Generator_TablePropName="PortfolioTable">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Index" msdata:AutoIncrement="true" msprop:Generator_UserColumnName="Index" msprop:Generator_ColumnPropNameInRow="Index" msprop:Generator_ColumnVarNameInTable="columnIndex" msprop:Generator_ColumnPropNameInTable="IndexColumn" type="xs:int" />
+              <xs:element name="Stock" msprop:Generator_UserColumnName="Stock" msprop:Generator_ColumnVarNameInTable="columnStock" msprop:Generator_ColumnPropNameInRow="Stock" msprop:Generator_ColumnPropNameInTable="StockColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Name" msprop:Generator_UserColumnName="Name" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInTable="NameColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="StockLastPrice" msprop:Generator_UserColumnName="StockLastPrice" msprop:Generator_ColumnVarNameInTable="columnStockLastPrice" msprop:Generator_ColumnPropNameInRow="StockLastPrice" msprop:Generator_ColumnPropNameInTable="StockLastPriceColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="StockImpVolatility" msprop:Generator_UserColumnName="StockImpVolatility" msprop:Generator_ColumnVarNameInTable="columnStockImpVolatility" msprop:Generator_ColumnPropNameInRow="StockImpVolatility" msprop:Generator_ColumnPropNameInTable="StockImpVolatilityColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="StockHisVolatility" msprop:Generator_UserColumnName="StockHisVolatility" msprop:Generator_ColumnVarNameInTable="columnStockHisVolatility" msprop:Generator_ColumnPropNameInRow="StockHisVolatility" msprop:Generator_ColumnPropNameInTable="StockHisVolatilityColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="StartDate" msprop:Generator_UserColumnName="StartDate" msprop:Generator_ColumnVarNameInTable="columnStartDate" msprop:Generator_ColumnPropNameInRow="StartDate" msprop:Generator_ColumnPropNameInTable="StartDateColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="EndDate" msprop:Generator_UserColumnName="EndDate" msprop:Generator_ColumnVarNameInTable="columnEndDate" msprop:Generator_ColumnPropNameInRow="EndDate" msprop:Generator_ColumnPropNameInTable="EndDateColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="NetInvestment" msprop:Generator_UserColumnName="NetInvestment" msprop:Generator_ColumnVarNameInTable="columnNetInvestment" msprop:Generator_ColumnPropNameInRow="NetInvestment" msprop:Generator_ColumnPropNameInTable="NetInvestmentColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="MaxProfitPotential" msprop:Generator_UserColumnName="MaxProfitPotential" msprop:Generator_ColumnVarNameInTable="columnMaxProfitPotential" msprop:Generator_ColumnPropNameInRow="MaxProfitPotential" msprop:Generator_ColumnPropNameInTable="MaxProfitPotentialColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="MaxProfitPotentialPrc" msprop:Generator_UserColumnName="MaxProfitPotentialPrc" msprop:Generator_ColumnPropNameInRow="MaxProfitPotentialPrc" msprop:Generator_ColumnVarNameInTable="columnMaxProfitPotentialPrc" msprop:Generator_ColumnPropNameInTable="MaxProfitPotentialPrcColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="MaxLossRisk" msprop:Generator_UserColumnName="MaxLossRisk" msprop:Generator_ColumnVarNameInTable="columnMaxLossRisk" msprop:Generator_ColumnPropNameInRow="MaxLossRisk" msprop:Generator_ColumnPropNameInTable="MaxLossRiskColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="MaxLossRiskPrc" msprop:Generator_UserColumnName="MaxLossRiskPrc" msprop:Generator_ColumnPropNameInRow="MaxLossRiskPrc" msprop:Generator_ColumnVarNameInTable="columnMaxLossRiskPrc" msprop:Generator_ColumnPropNameInTable="MaxLossRiskPrcColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="LowerBreakeven" msprop:Generator_UserColumnName="LowerBreakeven" msprop:Generator_ColumnVarNameInTable="columnLowerBreakeven" msprop:Generator_ColumnPropNameInRow="LowerBreakeven" msprop:Generator_ColumnPropNameInTable="LowerBreakevenColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="UpperBreakeven" msprop:Generator_UserColumnName="UpperBreakeven" msprop:Generator_ColumnVarNameInTable="columnUpperBreakeven" msprop:Generator_ColumnPropNameInRow="UpperBreakeven" msprop:Generator_ColumnPropNameInTable="UpperBreakevenColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="BreakevenProb" msprop:Generator_UserColumnName="BreakevenProb" msprop:Generator_ColumnVarNameInTable="columnBreakevenProb" msprop:Generator_ColumnPropNameInRow="BreakevenProb" msprop:Generator_ColumnPropNameInTable="BreakevenProbColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="BreakevenPrice" msprop:Generator_UserColumnName="BreakevenPrice" msprop:Generator_ColumnVarNameInTable="columnBreakevenPrice" msprop:Generator_ColumnPropNameInRow="BreakevenPrice" msprop:Generator_ColumnPropNameInTable="BreakevenPriceColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="ReturnIfUnchange" msprop:Generator_UserColumnName="ReturnIfUnchange" msprop:Generator_ColumnVarNameInTable="columnReturnIfUnchange" msprop:Generator_ColumnPropNameInRow="ReturnIfUnchange" msprop:Generator_ColumnPropNameInTable="ReturnIfUnchangeColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="ReturnIfUnchangePrc" msprop:Generator_UserColumnName="ReturnIfUnchangePrc" msprop:Generator_ColumnVarNameInTable="columnReturnIfUnchangePrc" msprop:Generator_ColumnPropNameInRow="ReturnIfUnchangePrc" msprop:Generator_ColumnPropNameInTable="ReturnIfUnchangePrcColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="CurrentReturn" msprop:Generator_UserColumnName="CurrentReturn" msprop:Generator_ColumnVarNameInTable="columnCurrentReturn" msprop:Generator_ColumnPropNameInRow="CurrentReturn" msprop:Generator_ColumnPropNameInTable="CurrentReturnColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="CurrentReturnPrc" msprop:Generator_UserColumnName="CurrentReturnPrc" msprop:Generator_ColumnVarNameInTable="columnCurrentReturnPrc" msprop:Generator_ColumnPropNameInRow="CurrentReturnPrc" msprop:Generator_ColumnPropNameInTable="CurrentReturnPrcColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="ReturnAtTarget" msprop:Generator_UserColumnName="ReturnAtTarget" msprop:Generator_ColumnVarNameInTable="columnReturnAtTarget" msprop:Generator_ColumnPropNameInRow="ReturnAtTarget" msprop:Generator_ColumnPropNameInTable="ReturnAtTargetColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="ReturnAtTargetPrc" msprop:Generator_UserColumnName="ReturnAtTargetPrc" msprop:Generator_ColumnVarNameInTable="columnReturnAtTargetPrc" msprop:Generator_ColumnPropNameInRow="ReturnAtTargetPrc" msprop:Generator_ColumnPropNameInTable="ReturnAtTargetPrcColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="ExpectedReturn" msprop:Generator_UserColumnName="ExpectedReturn" msprop:Generator_ColumnPropNameInRow="ExpectedReturn" msprop:Generator_ColumnVarNameInTable="columnExpectedReturn" msprop:Generator_ColumnPropNameInTable="ExpectedReturnColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="ExpectedReturnPrc" msprop:Generator_UserColumnName="ExpectedReturnPrc" msprop:Generator_ColumnPropNameInRow="ExpectedReturnPrc" msprop:Generator_ColumnVarNameInTable="columnExpectedReturnPrc" msprop:Generator_ColumnPropNameInTable="ExpectedReturnPrcColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="InterestPaid" msprop:Generator_UserColumnName="InterestPaid" msprop:Generator_ColumnVarNameInTable="columnInterestPaid" msprop:Generator_ColumnPropNameInRow="InterestPaid" msprop:Generator_ColumnPropNameInTable="InterestPaidColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="TotalDelta" msprop:Generator_UserColumnName="TotalDelta" msprop:Generator_ColumnVarNameInTable="columnTotalDelta" msprop:Generator_ColumnPropNameInRow="TotalDelta" msprop:Generator_ColumnPropNameInTable="TotalDeltaColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="TotalGamma" msprop:Generator_UserColumnName="TotalGamma" msprop:Generator_ColumnVarNameInTable="columnTotalGamma" msprop:Generator_ColumnPropNameInRow="TotalGamma" msprop:Generator_ColumnPropNameInTable="TotalGammaColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="TotalTheta" msprop:Generator_UserColumnName="TotalTheta" msprop:Generator_ColumnVarNameInTable="columnTotalTheta" msprop:Generator_ColumnPropNameInRow="TotalTheta" msprop:Generator_ColumnPropNameInTable="TotalThetaColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="TotalVega" msprop:Generator_UserColumnName="TotalVega" msprop:Generator_ColumnVarNameInTable="columnTotalVega" msprop:Generator_ColumnPropNameInRow="TotalVega" msprop:Generator_ColumnPropNameInTable="TotalVegaColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="Notes" msprop:Generator_UserColumnName="Notes" msprop:Generator_ColumnPropNameInRow="Notes" msprop:Generator_ColumnVarNameInTable="columnNotes" msprop:Generator_ColumnPropNameInTable="NotesColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="OpoFile" msprop:Generator_UserColumnName="OpoFile" msprop:Generator_ColumnVarNameInTable="columnOpoFile" msprop:Generator_ColumnPropNameInRow="OpoFile" msprop:Generator_ColumnPropNameInTable="OpoFileColumn" type="xs:string" />
+              <xs:element name="PortfolioMembership" msdata:Caption="PortfolioList" msprop:Generator_UserColumnName="PortfolioMembership" msprop:Generator_ColumnVarNameInTable="columnPortfolioMembership" msprop:Generator_ColumnPropNameInRow="PortfolioMembership" msprop:Generator_ColumnPropNameInTable="PortfolioMembershipColumn" type="xs:string" default="" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="SummaryTable" msprop:Generator_UserTableName="SummaryTable" msprop:Generator_RowDeletedName="SummaryTableRowDeleted" msprop:Generator_RowChangedName="SummaryTableRowChanged" msprop:Generator_RowClassName="SummaryTableRow" msprop:Generator_RowChangingName="SummaryTableRowChanging" msprop:Generator_RowEvArgName="SummaryTableRowChangeEvent" msprop:Generator_RowEvHandlerName="SummaryTableRowChangeEventHandler" msprop:Generator_TableClassName="SummaryTableDataTable" msprop:Generator_TableVarName="tableSummaryTable" msprop:Generator_RowDeletingName="SummaryTableRowDeleting" msprop:Generator_TablePropName="SummaryTable">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Index" msdata:AutoIncrement="true" msprop:Generator_UserColumnName="Index" msprop:Generator_ColumnPropNameInRow="Index" msprop:Generator_ColumnVarNameInTable="columnIndex" msprop:Generator_ColumnPropNameInTable="IndexColumn" type="xs:int" />
+              <xs:element name="Criteria" msprop:Generator_UserColumnName="Criteria" msprop:Generator_ColumnPropNameInRow="Criteria" msprop:Generator_ColumnVarNameInTable="columnCriteria" msprop:Generator_ColumnPropNameInTable="CriteriaColumn" type="xs:string" />
+              <xs:element name="Total" msprop:Generator_UserColumnName="Total" msprop:Generator_ColumnPropNameInRow="Total" msprop:Generator_ColumnVarNameInTable="columnTotal" msprop:Generator_ColumnPropNameInTable="TotalColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="TotalPrc" msprop:Generator_UserColumnName="TotalPrc" msprop:Generator_ColumnPropNameInRow="TotalPrc" msprop:Generator_ColumnVarNameInTable="columnTotalPrc" msprop:Generator_ColumnPropNameInTable="TotalPrcColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="IsCredit" msprop:Generator_UserColumnName="IsCredit" msprop:Generator_ColumnPropNameInRow="IsCredit" msprop:Generator_ColumnVarNameInTable="columnIsCredit" msprop:Generator_ColumnPropNameInTable="IsCreditColumn" type="xs:boolean" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:PortfolioTable" />
+      <xs:field xpath="mstns:Index" />
+    </xs:unique>
+    <xs:unique name="Constraint2">
+      <xs:selector xpath=".//mstns:PortfolioTable" />
+      <xs:field xpath="mstns:OpoFile" />
+    </xs:unique>
+    <xs:unique name="SummaryTable_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:SummaryTable" />
+      <xs:field xpath="mstns:Criteria" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

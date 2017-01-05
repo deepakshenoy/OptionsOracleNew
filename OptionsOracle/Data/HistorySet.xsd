@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="HistorySet" targetNamespace="http://tempuri.org/HistorySet.xsd" xmlns:mstns="http://tempuri.org/HistorySet.xsd" xmlns="http://tempuri.org/HistorySet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="HistorySet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="HistorySet" msprop:Generator_DataSetName="HistorySet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="HistoryTable" msprop:Generator_UserTableName="HistoryTable" msprop:Generator_RowDeletedName="HistoryTableRowDeleted" msprop:Generator_RowChangedName="HistoryTableRowChanged" msprop:Generator_RowClassName="HistoryTableRow" msprop:Generator_RowChangingName="HistoryTableRowChanging" msprop:Generator_RowEvArgName="HistoryTableRowChangeEvent" msprop:Generator_RowEvHandlerName="HistoryTableRowChangeEventHandler" msprop:Generator_TableClassName="HistoryTableDataTable" msprop:Generator_TableVarName="tableHistoryTable" msprop:Generator_RowDeletingName="HistoryTableRowDeleting" msprop:Generator_TablePropName="HistoryTable">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Date" msprop:Generator_UserColumnName="Date" msprop:Generator_ColumnVarNameInTable="columnDate" msprop:Generator_ColumnPropNameInRow="Date" msprop:Generator_ColumnPropNameInTable="DateColumn" type="xs:dateTime" />
+              <xs:element name="Open" msprop:Generator_UserColumnName="Open" msprop:Generator_ColumnVarNameInTable="columnOpen" msprop:Generator_ColumnPropNameInRow="Open" msprop:Generator_ColumnPropNameInTable="OpenColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="High" msprop:Generator_UserColumnName="High" msprop:Generator_ColumnVarNameInTable="columnHigh" msprop:Generator_ColumnPropNameInRow="High" msprop:Generator_ColumnPropNameInTable="HighColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="Low" msprop:Generator_UserColumnName="Low" msprop:Generator_ColumnVarNameInTable="columnLow" msprop:Generator_ColumnPropNameInRow="Low" msprop:Generator_ColumnPropNameInTable="LowColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="Close" msprop:Generator_UserColumnName="Close" msprop:Generator_ColumnVarNameInTable="columnClose" msprop:Generator_ColumnPropNameInRow="Close" msprop:Generator_ColumnPropNameInTable="CloseColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="Volume" msprop:Generator_UserColumnName="Volume" msprop:Generator_ColumnVarNameInTable="columnVolume" msprop:Generator_ColumnPropNameInRow="Volume" msprop:Generator_ColumnPropNameInTable="VolumeColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="AdjClose" msprop:Generator_UserColumnName="AdjClose" msprop:Generator_ColumnVarNameInTable="columnAdjClose" msprop:Generator_ColumnPropNameInRow="AdjClose" msprop:Generator_ColumnPropNameInTable="AdjCloseColumn" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="GlobalTable" msprop:Generator_UserTableName="GlobalTable" msprop:Generator_RowDeletedName="GlobalTableRowDeleted" msprop:Generator_RowChangedName="GlobalTableRowChanged" msprop:Generator_RowClassName="GlobalTableRow" msprop:Generator_RowChangingName="GlobalTableRowChanging" msprop:Generator_RowEvArgName="GlobalTableRowChangeEvent" msprop:Generator_RowEvHandlerName="GlobalTableRowChangeEventHandler" msprop:Generator_TableClassName="GlobalTableDataTable" msprop:Generator_TableVarName="tableGlobalTable" msprop:Generator_RowDeletingName="GlobalTableRowDeleting" msprop:Generator_TablePropName="GlobalTable">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Symbol" msprop:Generator_UserColumnName="Symbol" msprop:Generator_ColumnPropNameInRow="Symbol" msprop:Generator_ColumnVarNameInTable="columnSymbol" msprop:Generator_ColumnPropNameInTable="SymbolColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="LastUpdate" msprop:Generator_UserColumnName="LastUpdate" msprop:Generator_ColumnVarNameInTable="columnLastUpdate" msprop:Generator_ColumnPropNameInRow="LastUpdate" msprop:Generator_ColumnPropNameInTable="LastUpdateColumn" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:HistoryTable" />
+      <xs:field xpath="mstns:Date" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

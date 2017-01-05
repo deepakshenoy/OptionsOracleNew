@@ -1,0 +1,718 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{45718E33-8CF3-4174-9247-11846F13B799}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>OptionsOracle</RootNamespace>
+    <AssemblyName>OptionsOracle</AssemblyName>
+    <ManifestCertificateThumbprint>2A93723BABED408FAB3F039E07D674325E6A20F2</ManifestCertificateThumbprint>
+    <ManifestKeyFile>
+    </ManifestKeyFile>
+    <GenerateManifests>false</GenerateManifests>
+    <SignManifests>false</SignManifests>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <ApplicationIcon>optionsoracle.ico</ApplicationIcon>
+    <SignAssembly>false</SignAssembly>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <TargetZone>LocalIntranet</TargetZone>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+    <PublishUrl>C:\Work\OptionsOracle\Test\Install\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <UpdateUrl>http://www.samoasky.com/clickonce/optionsoracle/</UpdateUrl>
+    <SupportUrl>http://www.samoasky.com/download/optionsoracle/optionsoracle.pdf</SupportUrl>
+    <TargetCulture>en-US</TargetCulture>
+    <ProductName>OptionsOracle</ProductName>
+    <PublisherName>SamoaSky</PublisherName>
+    <WebPage>optionsoracle.htm</WebPage>
+    <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.5.0.0</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>OptionsOracle.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.JScript" />
+    <Reference Include="ReportPrinting, Version=0.50.2795.7109, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\ReportPrinting.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="ZedGraph, Version=5.0.10.8624, Culture=neutral, PublicKeyToken=02a83cbd123fcd60, processorArchitecture=MSIL" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core.cs" />
+    <Compile Include="Data\AnalysisSet.cs">
+      <DependentUpon>AnalysisSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\AnalysisSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AnalysisSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ColorConfig.cs" />
+    <Compile Include="Data\IndicatorSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IndicatorSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\LinksConfig.cs" />
+    <Compile Include="Data\LookupSet.cs">
+      <DependentUpon>LookupSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\TableConfig.cs" />
+    <Compile Include="Forms\AboutForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AboutForm.Designer.cs">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AdvanceDiagForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AdvanceDiagForm.Designer.cs">
+      <DependentUpon>AdvanceDiagForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Algo.cs" />
+    <Compile Include="Forms\AnalysisForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AnalysisForm.Designer.cs">
+      <DependentUpon>AnalysisForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\BalloonForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BalloonForm.designer.cs">
+      <DependentUpon>BalloonForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Comm.cs" />
+    <Compile Include="Config.cs" />
+    <Compile Include="Calc\Indicators\JScriptEvaluator.cs" />
+    <Compile Include="Data\HistorySet.cs">
+      <DependentUpon>HistorySet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\HistorySet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HistorySet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DesignerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DesignerForm.Designer.cs">
+      <DependentUpon>DesignerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\OptionPainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\OptionPainForm.Designer.cs">
+      <DependentUpon>OptionPainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\OptionsFilterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\OptionsFilterForm.Designer.cs">
+      <DependentUpon>OptionsFilterForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PutCallRatioForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PutCallRatioForm.Designer.cs">
+      <DependentUpon>PutCallRatioForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RootForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RootForm.Designer.cs">
+      <DependentUpon>RootForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\StockGroupForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\StockGroupForm.Designer.cs">
+      <DependentUpon>StockGroupForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\UpgradeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\UpgradeForm.Designer.cs">
+      <DependentUpon>UpgradeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\VolatilitySmileForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\VolatilitySmileForm.Designer.cs">
+      <DependentUpon>VolatilitySmileForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\LoadingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LoadingForm.Designer.cs">
+      <DependentUpon>LoadingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calc\Options\BinomialTree.cs" />
+    <Compile Include="Calc\Options\BlackScholes.cs" />
+    <Compile Include="Calc\Indicators\IndicatorMath.cs" />
+    <Compile Include="Calc\Options\OptionPricingModel.cs" />
+    <Compile Include="Calc\Account\CommissionMath.cs" />
+    <Compile Include="Forms\ConfigForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ConfigForm.Designer.cs">
+      <DependentUpon>ConfigForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ConfigSet.cs">
+      <DependentUpon>ConfigSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ConfigSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ConfigSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ContactUsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ContactUsForm.Designer.cs">
+      <DependentUpon>ContactUsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calc\Volatility\VolatilityMath.cs" />
+    <Compile Include="Calc\Wizard\WizardMath.cs" />
+    <Compile Include="Lang.cs" />
+    <Compile Include="Migration\Convert.cs" />
+    <Compile Include="Migration\Core.cs" />
+    <Compile Include="Migration\Market.cs" />
+    <Compile Include="Migration\Strategy.cs" />
+    <Compile Include="Migration\StrategyAnalysis.cs" />
+    <Compile Include="Remote\RemoteModule.cs" />
+    <Compile Include="Server\Dynamic\DynamicParser.cs" />
+    <Compile Include="Server\Dynamic\DynamicServer.cs" />
+    <Compile Include="Global.cs" />
+    <Compile Include="Forms\GraphForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\GraphForm.Designer.cs">
+      <DependentUpon>GraphForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Data\LookupSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LookupSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calc\Account\MarginMath.cs" />
+    <Compile Include="Server\Dynamic\DynamicModule.cs" />
+    <Compile Include="Server\PlugIn\PluginServer.cs" />
+    <Compile Include="Server\PlugIn\PluginServices.cs" />
+    <Compile Include="Calc\Statistics\NormalDist.cs" />
+    <Compile Include="Forms\GreeksForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\GreeksForm.Designer.cs">
+      <DependentUpon>GreeksForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calc\Options\OptionMath.cs" />
+    <Compile Include="Data\OptionsSet.cs">
+      <DependentUpon>OptionsSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\OptionsSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OptionsSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Calc\Analysis\StrategyMath.cs" />
+    <Compile Include="Forms\PortfolioCtrlForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PortfolioCtrlForm.Designer.cs">
+      <DependentUpon>PortfolioCtrlForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PortfolioForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PortfolioForm.Designer.cs">
+      <DependentUpon>PortfolioForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Data\PortfolioSet.cs">
+      <DependentUpon>PortfolioSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\PortfolioSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PortfolioSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\AboutForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AdvanceDiagForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>AdvanceDiagForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BalloonForm.resx">
+      <DependentUpon>BalloonForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ConfigForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ConfigForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ContactUsForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ContactUsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\OptionsFilterForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>OptionsFilterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PutCallRatioForm.resx">
+      <DependentUpon>PutCallRatioForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\VolatilitySmileForm.resx">
+      <DependentUpon>VolatilitySmileForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\GraphForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>GraphForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LoadingForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>LoadingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\GreeksForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>GreeksForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PortfolioCtrlForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>PortfolioCtrlForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PortfolioForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>PortfolioForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LookupForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>LookupForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SelectionForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SelectionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\VolatilityForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>VolatilityForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WaitForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>WaitForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WizardForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>WizardForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="Data\ConfigSet.xsc">
+      <DependentUpon>ConfigSet.xsd</DependentUpon>
+    </None>
+    <None Include="Data\ConfigSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ConfigSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Data\ConfigSet.xss">
+      <DependentUpon>ConfigSet.xsd</DependentUpon>
+    </None>
+    <None Include="Data\LookupSet.xsc">
+      <DependentUpon>LookupSet.xsd</DependentUpon>
+    </None>
+    <None Include="Data\LookupSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LookupSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Data\LookupSet.xss">
+      <DependentUpon>LookupSet.xsd</DependentUpon>
+    </None>
+    <None Include="Data\OptionsSet.xsc">
+      <DependentUpon>OptionsSet.xsd</DependentUpon>
+    </None>
+    <None Include="Data\OptionsSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>OptionsSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Data\OptionsSet.xss">
+      <DependentUpon>OptionsSet.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Calc\Analysis\ResultMath.cs" />
+    <Compile Include="Settings.cs" />
+    <Compile Include="Forms\SelectionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SelectionForm.Designer.cs">
+      <DependentUpon>SelectionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\VolatilityForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\VolatilityForm.Designer.cs">
+      <DependentUpon>VolatilityForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Data\VolatilitySet.cs">
+      <DependentUpon>VolatilitySet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\VolatilitySet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VolatilitySet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\WaitForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\WaitForm.Designer.cs">
+      <DependentUpon>WaitForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\LookupForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LookupForm.Designer.cs">
+      <DependentUpon>LookupForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Remote\RemoteConfig.cs" />
+    <Compile Include="Forms\WizardForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\WizardForm.Designer.cs">
+      <DependentUpon>WizardForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Data\WizardSet.cs">
+      <DependentUpon>WizardSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\WizardSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WizardSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="StrategyReportMaker.cs" />
+    <Compile Include="Update\UpdateControl.cs" />
+    <Compile Include="Update\UpdateInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\AnalysisSet.xsc">
+      <DependentUpon>AnalysisSet.xsd</DependentUpon>
+    </None>
+    <None Include="Data\AnalysisSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AnalysisSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Data\AnalysisSet.xss">
+      <DependentUpon>AnalysisSet.xsd</DependentUpon>
+    </None>
+    <None Include="Data\HistorySet.xsc">
+      <DependentUpon>HistorySet.xsd</DependentUpon>
+    </None>
+    <None Include="Data\HistorySet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HistorySet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Data\HistorySet.xss">
+      <DependentUpon>HistorySet.xsd</DependentUpon>
+    </None>
+    <None Include="Data\IndicatorSet.xsc">
+      <DependentUpon>IndicatorSet.xsd</DependentUpon>
+    </None>
+    <None Include="Data\IndicatorSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>IndicatorSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Data\IndicatorSet.xss">
+      <DependentUpon>IndicatorSet.xsd</DependentUpon>
+    </None>
+    <None Include="Icons\graph.ico" />
+    <BaseApplicationManifest Include="Properties\app.manifest" />
+    <None Include="Icons\network.ico" />
+    <None Include="Icons\refresh.ico" />
+    <None Include="Icons\tour.ico" />
+    <None Include="Icons\wizard.ico" />
+    <None Include="Data\PortfolioSet.xsc">
+      <DependentUpon>PortfolioSet.xsd</DependentUpon>
+    </None>
+    <None Include="Data\PortfolioSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PortfolioSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Data\PortfolioSet.xss">
+      <DependentUpon>PortfolioSet.xsd</DependentUpon>
+    </None>
+    <None Include="Data\VolatilitySet.xsc">
+      <DependentUpon>VolatilitySet.xsd</DependentUpon>
+    </None>
+    <None Include="Data\VolatilitySet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>VolatilitySet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Data\VolatilitySet.xss">
+      <DependentUpon>VolatilitySet.xsd</DependentUpon>
+    </None>
+    <None Include="Data\WizardSet.xsc">
+      <DependentUpon>WizardSet.xsd</DependentUpon>
+    </None>
+    <None Include="Data\WizardSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>WizardSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Data\WizardSet.xss">
+      <DependentUpon>WizardSet.xsd</DependentUpon>
+    </None>
+    <None Include="Icons\forward.png" />
+    <None Include="Icons\contactus.png" />
+    <Content Include="Icons\optionsoracle.ico" />
+    <None Include="Icons\portfolio.png" />
+    <Content Include="optionsoracle.ico" />
+    <EmbeddedResource Include="Forms\DesignerForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>DesignerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\OptionPainForm.resx">
+      <DependentUpon>OptionPainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RootForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>RootForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UpgradeForm.resx">
+      <DependentUpon>UpgradeForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\en-US\TourSelectMarket.html" />
+    <EmbeddedResource Include="Resources\it-IT\TourSelectMarket.html" />
+    <EmbeddedResource Include="Forms\AnalysisForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>AnalysisForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\StockGroupForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>StockGroupForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\it-IT\TourReviewStrategyResult.html" />
+    <EmbeddedResource Include="Resources\en-US\TourReviewStrategyResult.html" />
+    <EmbeddedResource Include="Resources\en-US\TourAddLongStock1.html" />
+    <EmbeddedResource Include="Resources\en-US\TourAddLongStock2.html" />
+    <EmbeddedResource Include="Resources\en-US\TourAddShortCall1.html" />
+    <EmbeddedResource Include="Resources\en-US\TourAddShortCall2.html" />
+    <EmbeddedResource Include="Resources\en-US\TourBuildStrategy.html" />
+    <EmbeddedResource Include="Resources\en-US\TourConfig.html" />
+    <EmbeddedResource Include="Resources\en-US\TourDownloadData.html" />
+    <EmbeddedResource Include="Resources\en-US\TourGraphZoom.html" />
+    <EmbeddedResource Include="Resources\en-US\TourOptionsTable.html" />
+    <EmbeddedResource Include="Resources\en-US\TourStockData.html" />
+    <EmbeddedResource Include="Resources\en-US\TourStockSelection.html" />
+    <EmbeddedResource Include="Resources\en-US\TourStrategyGraph.html" />
+    <EmbeddedResource Include="Resources\en-US\TourThankYou.html" />
+    <EmbeddedResource Include="Resources\en-US\TourWelcome.html" />
+    <EmbeddedResource Include="Resources\it-IT\TourAddLongStock1.html" />
+    <EmbeddedResource Include="Resources\it-IT\TourAddLongStock2.html" />
+    <EmbeddedResource Include="Resources\it-IT\TourAddShortCall1.html" />
+    <EmbeddedResource Include="Resources\it-IT\TourAddShortCall2.html" />
+    <EmbeddedResource Include="Resources\it-IT\TourBuildStrategy.html" />
+    <EmbeddedResource Include="Resources\it-IT\TourConfig.html" />
+    <EmbeddedResource Include="Resources\it-IT\TourDownloadData.html" />
+    <EmbeddedResource Include="Resources\it-IT\TourGraphZoom.html" />
+    <EmbeddedResource Include="Resources\it-IT\TourOptionsTable.html" />
+    <EmbeddedResource Include="Resources\it-IT\TourStockData.html" />
+    <EmbeddedResource Include="Resources\it-IT\TourStockSelection.html" />
+    <EmbeddedResource Include="Resources\it-IT\TourStrategyGraph.html" />
+    <EmbeddedResource Include="Resources\it-IT\TourThankYou.html" />
+    <EmbeddedResource Include="Resources\it-IT\TourWelcome.html" />
+    <None Include="Icons\refresh.png" />
+    <Content Include="OptionsOracle - DataCenter.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="OptionsOracle - Getting Started Guide.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Properties\DataSources\OptionsOracle.Forms.UpgradeForm+UpgradeInfo.datasource" />
+    <None Include="Resources\system-software-update.png" />
+    <None Include="ZedGraph.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,KB2468871">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29 and Update for .NET Framework 4 %28KB2468871%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="ZedGraph">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\OOMigrationLib\OOMigrationLib.csproj">
+      <Project>{24204EAC-3C4C-4776-97AA-63E6052A928F}</Project>
+      <Name>OOMigrationLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OOServerLib\OOServerLib.csproj">
+      <Project>{CC3DC09D-EDCB-446A-A3A3-10A5450007A6}</Project>
+      <Name>OOServerLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OOServerNSE\OOServerNSE.csproj">
+      <Project>{1945AD8D-09B1-458C-BA4D-3A3856C6BC69}</Project>
+      <Name>OOServerNSE</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Calc\Criteria\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

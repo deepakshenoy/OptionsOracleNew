@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="LookupSet" targetNamespace="http://tempuri.org/LookupSet.xsd" xmlns:mstns="http://tempuri.org/LookupSet.xsd" xmlns="http://tempuri.org/LookupSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="LookupSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="LookupSet" msprop:Generator_DataSetName="LookupSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="SymbolTable" msprop:Generator_UserTableName="SymbolTable" msprop:Generator_RowDeletedName="SymbolTableRowDeleted" msprop:Generator_RowChangedName="SymbolTableRowChanged" msprop:Generator_RowClassName="SymbolTableRow" msprop:Generator_RowChangingName="SymbolTableRowChanging" msprop:Generator_RowEvArgName="SymbolTableRowChangeEvent" msprop:Generator_RowEvHandlerName="SymbolTableRowChangeEventHandler" msprop:Generator_TableClassName="SymbolTableDataTable" msprop:Generator_TableVarName="tableSymbolTable" msprop:Generator_RowDeletingName="SymbolTableRowDeleting" msprop:Generator_TablePropName="SymbolTable">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Symbol" msprop:Generator_UserColumnName="Symbol" msprop:Generator_ColumnVarNameInTable="columnSymbol" msprop:Generator_ColumnPropNameInRow="Symbol" msprop:Generator_ColumnPropNameInTable="SymbolColumn" type="xs:string" />
+              <xs:element name="CompanyName" msprop:Generator_UserColumnName="CompanyName" msprop:Generator_ColumnVarNameInTable="columnCompanyName" msprop:Generator_ColumnPropNameInRow="CompanyName" msprop:Generator_ColumnPropNameInTable="CompanyNameColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:SymbolTable" />
+      <xs:field xpath="mstns:Symbol" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>
