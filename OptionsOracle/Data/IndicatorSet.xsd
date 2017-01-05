@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="IndicatorSet" targetNamespace="http://tempuri.org/IndicatorSet.xsd" xmlns:mstns="http://tempuri.org/IndicatorSet.xsd" xmlns="http://tempuri.org/IndicatorSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="IndicatorSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="IndicatorSet" msprop:Generator_DataSetName="IndicatorSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="IndicatorTable" msprop:Generator_UserTableName="IndicatorTable" msprop:Generator_RowDeletedName="IndicatorTableRowDeleted" msprop:Generator_RowChangedName="IndicatorTableRowChanged" msprop:Generator_RowClassName="IndicatorTableRow" msprop:Generator_RowChangingName="IndicatorTableRowChanging" msprop:Generator_RowEvArgName="IndicatorTableRowChangeEvent" msprop:Generator_RowEvHandlerName="IndicatorTableRowChangeEventHandler" msprop:Generator_TableClassName="IndicatorTableDataTable" msprop:Generator_TableVarName="tableIndicatorTable" msprop:Generator_RowDeletingName="IndicatorTableRowDeleting" msprop:Generator_TablePropName="IndicatorTable">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Enable" msprop:Generator_UserColumnName="Enable" msprop:Generator_ColumnPropNameInRow="Enable" msprop:Generator_ColumnVarNameInTable="columnEnable" msprop:Generator_ColumnPropNameInTable="EnableColumn" type="xs:boolean" minOccurs="0" />
+              <xs:element name="Name" msprop:Generator_UserColumnName="Name" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInTable="NameColumn" type="xs:string" />
+              <xs:element name="Equation" msprop:Generator_UserColumnName="Equation" msprop:Generator_ColumnPropNameInRow="Equation" msprop:Generator_ColumnVarNameInTable="columnEquation" msprop:Generator_ColumnPropNameInTable="EquationColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Format" msprop:Generator_UserColumnName="Format" msprop:Generator_ColumnPropNameInRow="Format" msprop:Generator_ColumnVarNameInTable="columnFormat" msprop:Generator_ColumnPropNameInTable="FormatColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Description" msprop:Generator_UserColumnName="Description" msprop:Generator_ColumnVarNameInTable="columnDescription" msprop:Generator_ColumnPropNameInRow="Description" msprop:Generator_ColumnPropNameInTable="DescriptionColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:IndicatorTable" />
+      <xs:field xpath="mstns:Name" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>
