@@ -1,0 +1,989 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<wizard xmlns="http://www.samoasky.com/optionsoracle_wizard.xml" version="1.4.0.2">
+  <strategy name="Bullish: Long Stock">
+    <WizardTable>
+      <Index>A</Index>
+      <Type>Long Stock</Type>
+      <Quantity>100</Quantity>
+      <EndDate>Auto</EndDate>
+      <Description>http://www.samoasky.com/description/long_stock.html</Description>
+    </WizardTable>
+  </strategy>
+  <strategy name="Bullish: Long Call">
+    <WizardTable>
+      <Index>A</Index>
+      <Type>Long Call</Type>
+      <Quantity>1</Quantity>
+      <EndDate>Auto</EndDate>
+      <TM>ATM</TM>
+      <EX>1</EX>
+      <Description>http://www.samoasky.com/description/long_call.html</Description>
+    </WizardTable>
+  </strategy>
+  <strategy name="Bullish: Short Put">
+    <WizardTable>
+      <Index>A</Index>
+      <Type>Short Put</Type>
+      <Quantity>1</Quantity>
+      <EndDate>Auto</EndDate>
+      <TM>ATM</TM>
+      <EX>1</EX>
+      <Description>http://www.samoasky.com/description/short_put.html</Description>
+    </WizardTable>
+  </strategy>
+  <strategy name="Bullish: Covered Call">
+    <WizardTable>
+      <Index>A</Index>
+      <Type>Short Call</Type>
+      <Quantity>1</Quantity>
+      <EndDate>Auto</EndDate>
+      <TM>ATM</TM>
+      <EX>1</EX>
+      <Description>http://www.samoasky.com/description/covered_call.html</Description>
+    </WizardTable>
+    <WizardTable>
+      <Index>B</Index>
+      <Type>Long Stock</Type>
+      <Quantity>100</Quantity>
+    </WizardTable>
+  </strategy>
+  <strategy name="Bullish: Out-Of-The-Money Covered Call">
+    <WizardTable>
+      <Index>A</Index>
+      <Type>Short Call</Type>
+      <Quantity>1</Quantity>
+      <EndDate>Auto</EndDate>
+      <StrikeSign1>&gt;=</StrikeSign1>
+      <Strike1>Stock-Price</Strike1>
+      <TM>OTM 1</TM>
+      <EX>1</EX>
+      <Description>http://www.samoasky.com/description/covered_call_otm.html</Description>
+    </WizardTable>
+    <WizardTable>
+      <Index>B</Index>
+      <Type>Long Stock</Type>
+      <Quantity>100</Quantity>
+    </WizardTable>
+  </strategy>
+  <strategy name="Bullish: In-The-Money Covered Call">
+    <WizardTable>
+      <Index>A</Index>
+      <Type>Short Call</Type>
+      <Quantity>1</Quantity>
+      <StrikeSign1>&lt;=</StrikeSign1>
+      <Strike1>Stock-Price</Strike1>
+      <EndDate>Auto</EndDate>
+      <TM>ITM 1</TM>
+      <EX>1</EX>
+      <Description>http://www.samoasky.com/description/covered_call_itm.html</Description>
+    </WizardTable>
+    <WizardTable>
+      <Index>B</Index>
+      <Type>Long Stock</Type>
+      <Quantity>100</Quantity>
+    </WizardTable>
+  </strategy>
+  <strategy name="Bullish: Covered Straddle">
+    <WizardTable>
+      <Index>A</Index>
+      <Type>Short Call</Type>
+      <Quantity>1</Quantity>
+      <EndDate>Auto</EndDate>
+      <TM>OTM 1</TM>
+      <EX>1</EX>
+      <Description>http://www.samoasky.com/description/covered_straddle.html</Description>
+    </WizardTable>
+    <WizardTable>
+      <Index>B</Index>
+      <Type>Short Put</Type>
+      <Quantity>1</Quantity>
+      <StrikeSign1>=</StrikeSign1>
+      <Strike1>Strike of A</Strike1>
+      <ExpirationSign1>=</ExpirationSign1>
+      <Expiration1>Expiration of A</Expiration1>
+      <TM>OTM 1</TM>
+      <EX>1</EX>
+    </WizardTable>
+    <WizardTable>
+      <Index>C</Index>
+      <Type>Long Stock</Type>
+      <Quantity>100</Quantity>
+    </WizardTable>
+  </strategy>
+  <strategy name="Bullish: Synthetic Long Stock">
+    <WizardTable>
+      <Index>A</Index>
+      <Type>Long Call</Type>
+      <Quantity>1</Quantity>
+      <EndDate>Auto</EndDate>
+      <TM>ATM</TM>
+      <EX>1</EX>
+      <Description>http://www.samoasky.com/description/synthetic_long_stock.html</Description>
+    </WizardTable>
+    <WizardTable>
+      <Index>B</Index>
+      <Type>Short Put</Type>
+      <Quantity>1</Quantity>
+      <StrikeSign1>=</StrikeSign1>
+      <Strike1>Strike of A</Strike1>
+      <ExpirationSign1>=</ExpirationSign1>
+      <Expiration1>Expiration of A</Expiration1>
+      <TM>ATM</TM>
+      <EX>1</EX>
+    </WizardTable>
+  </strategy>
+  <strategy name="Bullish: Bull Call Spread">
+    <WizardTable>
+      <Index>A</Index>
+      <Type>Long Call</Type>
+      <Quantity>1</Quantity>
+      <EndDate>Auto</EndDate>
+      <TM>ITM 1</TM>
+      <EX>1</EX>
+      <Description>http://www.samoasky.com/description/bull_call_spread.html</Description>
+    </WizardTable>
+    <WizardTable>
+      <Index>B</Index>
+      <Type>Short Call</Type>
+      <Quantity>1</Quantity>
+      <StrikeSign1>&gt;</StrikeSign1>
+      <Strike1>Strike of A</Strike1>
+      <ExpirationSign1>=</ExpirationSign1>
+      <Expiration1>Expiration of A</Expiration1>
+      <TM>OTM 1</TM>
+      <EX>1</EX>
+    </WizardTable>
+  </strategy>
+  <strategy name="Bullish: Bull Put Spread">
+    <WizardTable>
+      <Index>A</Index>
+      <Type>Long Put</Type>
+      <Quantity>1</Quantity>
+      <EndDate>Auto</EndDate>
+      <TM>OTM 1</TM>
+      <EX>1</EX>
+      <Description>http://www.samoasky.com/description/bull_put_spread.html</Description>
+    </WizardTable>
+    <WizardTable>
+      <Index>B</Index>
+      <Type>Short Put</Type>
+      <Quantity>1</Quantity>
+      <StrikeSign1>&gt;</StrikeSign1>
+      <Strike1>Strike of A</Strike1>
+      <ExpirationSign1>=</ExpirationSign1>
+      <Expiration1>Expiration of A</Expiration1>
+      <TM>ITM 1</TM>
+      <EX>1</EX>
+    </WizardTable>
+  </strategy>
+  <strategy name="Bullish: Bull Call Diagonal Spread">
+    <WizardTable>
+      <Index>A</Index>
+      <Type>Long Call</Type>
+      <Quantity>1</Quantity>
+      <EndDate>Auto</EndDate>
+      <TM>ITM 1</TM>
+      <EX>2</EX>
+      <Description>http://www.samoasky.com/description/bull_diagonal_call_spread.html</Description>
+    </WizardTable>
+    <WizardTable>
+      <Index>B</Index>
+      <Type>Short Call</Type>
+      <Quantity>1</Quantity>
+      <StrikeSign1>&gt;</StrikeSign1>
+      <Strike1>Strike of A</Strike1>
+      <ExpirationSign1>&lt;</ExpirationSign1>
+      <Expiration1>Expiration of A</Expiration1>
+      <TM>OTM 1</TM>
+      <EX>1</EX>
+    </WizardTable>
+  </strategy>
+  <strategy name="Bullish: Bull Put Diagonal Spread">
+    <WizardTable>
+      <Index>A</Index>
+      <Type>Long Put</Type>
+      <Quantity>1</Quantity>
+      <EndDate>Auto</EndDate>
+      <TM>OTM 1</TM>
+      <EX>2</EX>
+      <Description>http://www.samoasky.com/description/bull_diagonal_put_spread.html</Description>
+    </WizardTable>
+    <WizardTable>
+      <Index>B</Index>
+      <Type>Short Put</Type>
+      <Quantity>1</Quantity>
+      <StrikeSign1>&gt;</StrikeSign1>
+      <Strike1>Strike of A</Strike1>
+      <ExpirationSign1>&lt;</ExpirationSign1>
+      <Expiration1>Expiration of A</Expiration1>
+      <TM>ITM 1</TM>
+      <EX>1</EX>
+    </WizardTable>
+  </strategy>
+  <strategy name="Bullish: Long Bull Collar">
+    <WizardTable>
+      <Index>A</Index>
+      <Type>Short Call</Type>
+      <Quantity>1</Quantity>
+      <EndDate>Auto</EndDate>
+      <TM>OTM 1</TM>
+      <EX>1</EX>
+      <Description>http://www.samoasky.com/description/long_bull_collar.html</Description>
+    </WizardTable>
+    <WizardTable>
+      <Index>B</Index>
+      <Type>Long Put</Type>
+      <Quantity>1</Quantity>
+      <StrikeSign1>&lt;=</StrikeSign1>
+      <Strike1>Strike of A</Strike1>
+      <StrikeSign2>&lt;=</StrikeSign2>
+      <Strike2>Stock-Price</Strike2>
+      <ExpirationSign1>=</ExpirationSign1>
+      <Expiration1>Expiration of A</Expiration1>
+      <TM>OTM 1</TM>
+      <EX>1</EX>
+    </WizardTable>
+    <WizardTable>
+      <Index>C</Index>
+      <Type>Long Stock</Type>
+      <Quantity>100</Quantity>
+    </WizardTable>
+  </strategy>
+  <strategy name="Bullish: Short Bull Collar">
+    <WizardTable>
+      <Index>A</Index>
+      <Type>Short Put</Type>
+      <Quantity>1</Quantity>
+      <EndDate>Auto</EndDate>
+      <TM>ITM 1</TM>
+      <EX>1</EX>
+      <Description>http://www.samoasky.com/description/short_bull_collar.html</Description>
+    </WizardTable>
+    <WizardTable>
+      <Index>B</Index>
+      <Type>Long Call</Type>
+      <Quantity>1</Quantity>
+      <StrikeSign1>&lt;=</StrikeSign1>
+      <Strike1>Strike of A</Strike1>
+      <StrikeSign2>&lt;=</StrikeSign2>
+      <Strike2>Stock-Price</Strike2>
+      <ExpirationSign1>=</ExpirationSign1>
+      <Expiration1>Expiration of A</Expiration1>
+      <TM>ITM 1</TM>
+      <EX>1</EX>
+    </WizardTable>
+    <WizardTable>
+      <Index>C</Index>
+      <Type>Short Stock</Type>
+      <Quantity>100</Quantity>
+    </WizardTable>
+  </strategy>
+  <strategy name="Bullish: Call Calendar Spread">
+    <WizardTable>
+      <Index>A</Index>
+      <Type>Short Call</Type>
+      <Quantity>1</Quantity>
+      <EndDate>Auto</EndDate>
+      <Description>http://www.samoasky.com/description/bull_call_calendar_spread.html</Description>
+      <TM>OTM 1</TM>
+      <EX>1</EX>
+    </WizardTable>
+    <WizardTable>
+      <Index>B</Index>
+      <Type>Long Call</Type>
+      <Quantity>1</Quantity>
+      <StrikeSign1>&lt;</StrikeSign1>
+      <Strike1>Strike of A</Strike1>
+      <ExpirationSign1>&gt;</ExpirationSign1>
+      <Expiration1>Expiration of A</Expiration1>
+      <TM>ATM</TM>
+      <EX>2</EX>
+    </WizardTable>
+  </strategy>
+  <strategy name="Bullish: Call Ratio Spread">
+    <WizardTable>
+      <Index>A</Index>
+      <Type>Long Call</Type>
+      <Quantity>2</Quantity>
+      <EndDate>Auto</EndDate>
+      <TM>ATM</TM>
+      <EX>1</EX>
+      <Description>http://www.samoasky.com/description/bull_call_ratio_spread.html</Description>
+    </WizardTable>
+    <WizardTable>
+      <Index>B</Index>
+      <Type>Short Call</Type>
+      <Quantity>1</Quantity>
+      <StrikeSign1>&lt;</StrikeSign1>
+      <Strike1>Strike of A</Strike1>
+      <ExpirationSign1>=</ExpirationSign1>
+      <Expiration1>Expiration of A</Expiration1>
+      <TM>ITM 1</TM>
+      <EX>1</EX>
+    </WizardTable>
+  </strategy>
+  <strategy name="Bearish: Short Stock">
+    <WizardTable>
+      <Index>A</Index>
+      <Type>Short Stock</Type>
+      <Quantity>100</Quantity>
+      <EndDate>Auto</EndDate>
+      <Description>http://www.samoasky.com/description/short_stock.html</Description>
+    </WizardTable>
+  </strategy>
+  <strategy name="Bearish: Short Call">
+    <WizardTable>
+      <Index>A</Index>
+      <Type>Short Call</Type>
+      <Quantity>1</Quantity>
+      <EndDate>Auto</EndDate>
+      <TM>OTM 1</TM>
+      <EX>1</EX>
+      <Description>http://www.samoasky.com/description/short_call.html</Description>
+    </WizardTable>
+  </strategy>
+  <strategy name="Bearish: Long Put">
+    <WizardTable>
+      <Index>A</Index>
+      <Type>Long Put</Type>
+      <Quantity>1</Quantity>
+      <EndDate>Auto</EndDate>
+      <TM>OTM 1</TM>
+      <EX>1</EX>
+      <Description>http://www.samoasky.com/description/long_put.html</Description>
+    </WizardTable>
+  </strategy>
+  <strategy name="Bearish: Covered Put">
+    <WizardTable>
+      <Index>A</Index>
+      <Type>Short Put</Type>
+      <Quantity>1</Quantity>
+      <EndDate>Auto</EndDate>
+      <TM>ATM</TM>
+      <EX>1</EX>
+      <Description>http://www.samoasky.com/description/covered_put.html</Description>
+    </WizardTable>
+    <WizardTable>
+      <Index>B</Index>
+      <Type>Short Stock</Type>
+      <Quantity>100</Quantity>
+    </WizardTable>
+  </strategy>
+  <strategy name="Bearish: Bear Call Spread">
+    <WizardTable>
+      <Index>A</Index>
+      <Type>Short Call</Type>
+      <Quantity>1</Quantity>
+      <EndDate>Auto</EndDate>
+      <TM>ITM 1</TM>
+      <EX>1</EX>
+      <Description>http://www.samoasky.com/description/bear_call_spread.html</Description>
+    </WizardTable>
+    <WizardTable>
+      <Index>B</Index>
+      <Type>Long Call</Type>
+      <Quantity>1</Quantity>
+      <StrikeSign1>&gt;</StrikeSign1>
+      <Strike1>Strike of A</Strike1>
+      <ExpirationSign1>=</ExpirationSign1>
+      <Expiration1>Expiration of A</Expiration1>
+      <TM>OTM 1</TM>
+      <EX>1</EX>
+    </WizardTable>
+  </strategy>
+  <strategy name="Bearish: Bear Put Spread">
+    <WizardTable>
+      <Index>A</Index>
+      <Type>Short Put</Type>
+      <Quantity>1</Quantity>
+      <EndDate>Auto</EndDate>
+      <TM>OTM 1</TM>
+      <EX>1</EX>
+      <Description>http://www.samoasky.com/description/bear_put_spread.html</Description>
+    </WizardTable>
+    <WizardTable>
+      <Index>B</Index>
+      <Type>Long Put</Type>
+      <Quantity>1</Quantity>
+      <StrikeSign1>&gt;</StrikeSign1>
+      <Strike1>Strike of A</Strike1>
+      <ExpirationSign1>=</ExpirationSign1>
+      <Expiration1>Expiration of A</Expiration1>
+      <TM>ITM 1</TM>
+      <EX>1</EX>
+    </WizardTable>
+  </strategy>
+  <strategy name="Bearish: Bear Diagonal Call Spread">
+    <WizardTable>
+      <Index>A</Index>
+      <Type>Short Call</Type>
+      <Quantity>1</Quantity>
+      <EndDate>Auto</EndDate>
+      <TM>ITM 1</TM>
+      <EX>1</EX>
+      <Description>http://www.samoasky.com/description/bear_diagonal_call_spread.html</Description>
+    </WizardTable>
+    <WizardTable>
+      <Index>B</Index>
+      <Type>Long Call</Type>
+      <Quantity>1</Quantity>
+      <StrikeSign1>&gt;</StrikeSign1>
+      <Strike1>Strike of A</Strike1>
+      <ExpirationSign1>&gt;</ExpirationSign1>
+      <Expiration1>Expiration of A</Expiration1>
+      <TM>OTM 1</TM>
+      <EX>2</EX>
+    </WizardTable>
+  </strategy>
+  <strategy name="Bearish: Bear Diagonal Put Spread">
+    <WizardTable>
+      <Index>A</Index>
+      <Type>Short Put</Type>
+      <Quantity>1</Quantity>
+      <EndDate>Auto</EndDate>
+      <TM>OTM 1</TM>
+      <EX>1</EX>
+      <Description>http://www.samoasky.com/description/bear_diagonal_put_spread.html</Description>
+    </WizardTable>
+    <WizardTable>
+      <Index>B</Index>
+      <Type>Long Put</Type>
+      <Quantity>1</Quantity>
+      <StrikeSign1>&gt;</StrikeSign1>
+      <Strike1>Strike of A</Strike1>
+      <ExpirationSign1>&gt;</ExpirationSign1>
+      <Expiration1>Expiration of A</Expiration1>
+      <TM>ITM 1</TM>
+      <EX>2</EX>
+    </WizardTable>
+  </strategy>
+  <strategy name="Bearish: Long Bear Collar">
+    <WizardTable>
+      <Index>A</Index>
+      <Type>Long Put</Type>
+      <Quantity>1</Quantity>
+      <EndDate>Auto</EndDate>
+      <TM>ITM 1</TM>
+      <EX>1</EX>
+      <Description>http://www.samoasky.com/description/long_bear_collar.html</Description>
+    </WizardTable>
+    <WizardTable>
+      <Index>B</Index>
+      <Type>Short Call</Type>
+      <Quantity>1</Quantity>
+      <StrikeSign1>&lt;=</StrikeSign1>
+      <Strike1>Strike of A</Strike1>
+      <StrikeSign2>&lt;=</StrikeSign2>
+      <Strike2>Stock-Price</Strike2>
+      <ExpirationSign1>=</ExpirationSign1>
+      <Expiration1>Expiration of A</Expiration1>
+      <TM>ITM 1</TM>
+      <EX>1</EX>
+    </WizardTable>
+    <WizardTable>
+      <Index>C</Index>
+      <Type>Long Stock</Type>
+      <Quantity>100</Quantity>
+    </WizardTable>
+  </strategy>
+  <strategy name="Bearish: Short Bear Collar">
+    <WizardTable>
+      <Index>A</Index>
+      <Type>Long Call</Type>
+      <Quantity>1</Quantity>
+      <EndDate>Auto</EndDate>
+      <TM>OTM 1</TM>
+      <EX>1</EX>
+      <Description>http://www.samoasky.com/description/short_bear_collar.html</Description>
+    </WizardTable>
+    <WizardTable>
+      <Index>B</Index>
+      <Type>Short Put</Type>
+      <Quantity>1</Quantity>
+      <StrikeSign1>&lt;=</StrikeSign1>
+      <Strike1>Strike of A</Strike1>
+      <StrikeSign2>&lt;=</StrikeSign2>
+      <Strike2>Stock-Price</Strike2>
+      <ExpirationSign1>=</ExpirationSign1>
+      <Expiration1>Expiration of A</Expiration1>
+      <TM>OTM 1</TM>
+      <EX>1</EX>
+    </WizardTable>
+    <WizardTable>
+      <Index>C</Index>
+      <Type>Short Stock</Type>
+      <Quantity>100</Quantity>
+    </WizardTable>
+  </strategy>
+  <strategy name="Bearish: Bear Put Calendar Spread">
+    <WizardTable>
+      <Index>A</Index>
+      <Type>Short Put</Type>
+      <Quantity>1</Quantity>
+      <EndDate>Auto</EndDate>
+      <Description>http://www.samoasky.com/description/bear_put_calendar_spread.html</Description>
+      <TM>OTM 1</TM>
+      <EX>1</EX>
+    </WizardTable>
+    <WizardTable>
+      <Index>B</Index>
+      <Type>Long Put</Type>
+      <Quantity>1</Quantity>
+      <StrikeSign1>&gt;</StrikeSign1>
+      <Strike1>Strike of A</Strike1>
+      <ExpirationSign1>&gt;</ExpirationSign1>
+      <Expiration1>Expiration of A</Expiration1>
+      <TM>ATM</TM>
+      <EX>2</EX>
+    </WizardTable>
+  </strategy>
+  <strategy name="Bearish: Put Ratio Spread">
+    <WizardTable>
+      <Index>A</Index>
+      <Type>Long Put</Type>
+      <Quantity>2</Quantity>
+      <EndDate>Auto</EndDate>
+      <TM>ATM</TM>
+      <EX>1</EX>
+      <Description>http://www.samoasky.com/description/bear_put_ratio_spread.html</Description>
+    </WizardTable>
+    <WizardTable>
+      <Index>B</Index>
+      <Type>Short Put</Type>
+      <Quantity>1</Quantity>
+      <StrikeSign1>&gt;</StrikeSign1>
+      <Strike1>Strike of A</Strike1>
+      <ExpirationSign1>=</ExpirationSign1>
+      <Expiration1>Expiration of A</Expiration1>
+      <TM>ITM 1</TM>
+      <EX>1</EX>
+    </WizardTable>
+  </strategy>
+  <strategy name="Neutral: Long Straddle">
+    <WizardTable>
+      <Index>A</Index>
+      <Type>Long Put</Type>
+      <Quantity>1</Quantity>
+      <EndDate>Auto</EndDate>
+      <TM>ATM</TM>
+      <EX>1</EX>
+      <Description>http://www.samoasky.com/description/long_straddle.html</Description>
+    </WizardTable>
+    <WizardTable>
+      <Index>B</Index>
+      <Type>Long Call</Type>
+      <Quantity>1</Quantity>
+      <StrikeSign1>=</StrikeSign1>
+      <Strike1>Strike of A</Strike1>
+      <ExpirationSign1>=</ExpirationSign1>
+      <Expiration1>Expiration of A</Expiration1>
+      <TM>ATM</TM>
+      <EX>1</EX>
+    </WizardTable>
+  </strategy>
+  <strategy name="Neutral: Long Strangle">
+    <WizardTable>
+      <Index>A</Index>
+      <Type>Long Put</Type>
+      <Quantity>1</Quantity>
+      <EndDate>Auto</EndDate>
+      <TM>OTM 1</TM>
+      <EX>1</EX>
+      <Description>http://www.samoasky.com/description/long_strangle.html</Description>
+    </WizardTable>
+    <WizardTable>
+      <Index>B</Index>
+      <Type>Long Call</Type>
+      <Quantity>1</Quantity>
+      <StrikeSign1>&gt;</StrikeSign1>
+      <Strike1>Strike of A</Strike1>
+      <ExpirationSign1>=</ExpirationSign1>
+      <Expiration1>Expiration of A</Expiration1>
+      <TM>OTM 1</TM>
+      <EX>1</EX>
+    </WizardTable>
+  </strategy>
+  <strategy name="Neutral: Short Straddle">
+    <WizardTable>
+      <Index>A</Index>
+      <Type>Short Put</Type>
+      <Quantity>1</Quantity>
+      <EndDate>Auto</EndDate>
+      <TM>ATM</TM>
+      <EX>1</EX>
+      <Description>http://www.samoasky.com/description/short_straddle.html</Description>
+    </WizardTable>
+    <WizardTable>
+      <Index>B</Index>
+      <Type>Short Call</Type>
+      <Quantity>1</Quantity>
+      <StrikeSign1>=</StrikeSign1>
+      <Strike1>Strike of A</Strike1>
+      <ExpirationSign1>=</ExpirationSign1>
+      <Expiration1>Expiration of A</Expiration1>
+      <TM>ATM</TM>
+      <EX>1</EX>
+    </WizardTable>
+  </strategy>
+  <strategy name="Neutral: Long Put Synthetic Straddle">
+    <WizardTable>
+      <Index>A</Index>
+      <Type>Long Put</Type>
+      <Quantity>2</Quantity>
+      <EndDate>Auto</EndDate>
+      <TM>ATM</TM>
+      <EX>1</EX>
+      <Description>http://www.samoasky.com/description/long_put_synthetic_straddle.html</Description>
+    </WizardTable>
+    <WizardTable>
+      <Index>B</Index>
+      <Type>Long Stock</Type>
+      <Quantity>100</Quantity>
+    </WizardTable>
+  </strategy>
+  <strategy name="Neutral: Short Call Synthetic Straddle">
+    <WizardTable>
+      <Index>A</Index>
+      <Type>Short Call</Type>
+      <Quantity>2</Quantity>
+      <EndDate>Auto</EndDate>
+      <TM>ATM</TM>
+      <EX>1</EX>
+      <Description>http://www.samoasky.com/description/short_call_synthetic_straddle.html</Description>
+    </WizardTable>
+    <WizardTable>
+      <Index>B</Index>
+      <Type>Long Stock</Type>
+      <Quantity>100</Quantity>
+    </WizardTable>
+  </strategy>
+  <strategy name="Neutral: Short Strangle">
+    <WizardTable>
+      <Index>A</Index>
+      <Type>Short Put</Type>
+      <Quantity>1</Quantity>
+      <EndDate>Auto</EndDate>
+      <TM>OTM 1</TM>
+      <EX>1</EX>
+      <Description>http://www.samoasky.com/description/short_strangle.html</Description>
+    </WizardTable>
+    <WizardTable>
+      <Index>B</Index>
+      <Type>Short Call</Type>
+      <Quantity>1</Quantity>
+      <StrikeSign1>&gt;</StrikeSign1>
+      <Strike1>Strike of A</Strike1>
+      <ExpirationSign1>=</ExpirationSign1>
+      <Expiration1>Expiration of A</Expiration1>
+      <TM>OTM 1</TM>
+      <EX>1</EX>
+    </WizardTable>
+  </strategy>
+  <strategy name="Neutral: Ratio Covered Call">
+    <WizardTable>
+      <Index>A</Index>
+      <Type>Short Call</Type>
+      <Quantity>2</Quantity>
+      <EndDate>Auto</EndDate>
+      <TM>OTM 1</TM>
+      <EX>1</EX>
+      <Description>http://www.samoasky.com/description/ratio_covered_call.html</Description>
+    </WizardTable>
+    <WizardTable>
+      <Index>B</Index>
+      <Type>Long Stock</Type>
+      <Quantity>100</Quantity>
+    </WizardTable>
+  </strategy>
+  <strategy name="Neutral: Ratio Call Spread">
+    <WizardTable>
+      <Index>A</Index>
+      <Type>Long Call</Type>
+      <Quantity>1</Quantity>
+      <EndDate>Auto</EndDate>
+      <TM>OTM 1</TM>
+      <EX>1</EX>
+      <Description>http://www.samoasky.com/description/ratio_call_spread.html</Description>
+    </WizardTable>
+    <WizardTable>
+      <Index>B</Index>
+      <Type>Short Call</Type>
+      <Quantity>2</Quantity>
+      <TM>OTM 2</TM>
+      <EX>1</EX>
+    </WizardTable>
+  </strategy>
+  <strategy name="Neutral: Call Calendar Spread">
+    <WizardTable>
+      <Index>A</Index>
+      <Type>Short Call</Type>
+      <Quantity>1</Quantity>
+      <EndDate>Auto</EndDate>
+      <Description>http://www.samoasky.com/description/call_calendar_spread.html</Description>
+      <TM>ATM</TM>
+      <EX>1</EX>
+    </WizardTable>
+    <WizardTable>
+      <Index>B</Index>
+      <Type>Long Call</Type>
+      <Quantity>1</Quantity>
+      <StrikeSign1>=</StrikeSign1>
+      <Strike1>Strike of A</Strike1>
+      <ExpirationSign1>&gt;</ExpirationSign1>
+      <Expiration1>Expiration of A</Expiration1>
+      <TM>ATM</TM>
+      <EX>2</EX>
+    </WizardTable>
+  </strategy>
+  <strategy name="Neutral: Put Calendar Spread">
+    <WizardTable>
+      <Index>A</Index>
+      <Type>Short Put</Type>
+      <Quantity>1</Quantity>
+      <EndDate>Auto</EndDate>
+      <Description>http://www.samoasky.com/description/put_calendar_spread.html</Description>
+      <TM>ATM</TM>
+      <EX>1</EX>
+    </WizardTable>
+    <WizardTable>
+      <Index>B</Index>
+      <Type>Long Put</Type>
+      <Quantity>1</Quantity>
+      <StrikeSign1>=</StrikeSign1>
+      <Strike1>Strike of A</Strike1>
+      <ExpirationSign1>&gt;</ExpirationSign1>
+      <Expiration1>Expiration of A</Expiration1>
+      <TM>ATM</TM>
+      <EX>2</EX>
+    </WizardTable>
+  </strategy>
+  <strategy name="Neutral: Reverse Call Calendar Spread">
+    <WizardTable>
+      <Index>A</Index>
+      <Type>Long Call</Type>
+      <Quantity>1</Quantity>
+      <EndDate>Auto</EndDate>
+      <Description>http://www.samoasky.com/description/reverse_call_calendar_spread.html</Description>
+      <TM>ATM</TM>
+      <EX>1</EX>
+    </WizardTable>
+    <WizardTable>
+      <Index>B</Index>
+      <Type>Short Call</Type>
+      <Quantity>1</Quantity>
+      <StrikeSign1>=</StrikeSign1>
+      <Strike1>Strike of A</Strike1>
+      <ExpirationSign1>&gt;</ExpirationSign1>
+      <Expiration1>Expiration of A</Expiration1>
+      <TM>ATM</TM>
+      <EX>2</EX>
+    </WizardTable>
+  </strategy>
+  <strategy name="Neutral: Reverse Put Calendar Spread">
+    <WizardTable>
+      <Index>A</Index>
+      <Type>Long Put</Type>
+      <Quantity>1</Quantity>
+      <EndDate>Auto</EndDate>
+      <Description>http://www.samoasky.com/description/reverse_put_calendar_spread.html</Description>
+      <TM>ATM</TM>
+      <EX>1</EX>
+    </WizardTable>
+    <WizardTable>
+      <Index>B</Index>
+      <Type>Short Put</Type>
+      <Quantity>1</Quantity>
+      <StrikeSign1>=</StrikeSign1>
+      <Strike1>Strike of A</Strike1>
+      <ExpirationSign1>&gt;</ExpirationSign1>
+      <Expiration1>Expiration of A</Expiration1>
+      <TM>ATM</TM>
+      <EX>2</EX>
+    </WizardTable>
+  </strategy>
+  <strategy name="Neutral: Double Calendar Spread">
+    <WizardTable>
+      <Index>A</Index>
+      <Type>Short Call</Type>
+      <Quantity>1</Quantity>
+      <EndDate>Auto</EndDate>
+      <StrikeSign1>&gt;</StrikeSign1>
+      <Strike1>Stock-Price</Strike1>
+      <ExpirationSign1>=</ExpirationSign1>
+      <Expiration1>Expiration 1</Expiration1>
+      <EndDate>Auto</EndDate>
+      <Description>http://www.samoasky.com/description/double_calendar_spread.html</Description>
+      <TM>OTM 1</TM>
+      <EX>1</EX>
+    </WizardTable>
+    <WizardTable>
+      <Index>B</Index>
+      <Type>Long Call</Type>
+      <Quantity>1</Quantity>
+      <StrikeSign1>=</StrikeSign1>
+      <Strike1>Strike of A</Strike1>
+      <ExpirationSign1>&gt;</ExpirationSign1>
+      <Expiration1>Expiration 2</Expiration1>
+      <TM>OTM 1</TM>
+      <EX>2</EX>
+    </WizardTable>
+    <WizardTable>
+      <Index>C</Index>
+      <Type>Short Put</Type>
+      <Quantity>1</Quantity>
+      <StrikeSign1>&lt;</StrikeSign1>
+      <Strike1>Stock-Price</Strike1>
+      <ExpirationSign1>=</ExpirationSign1>
+      <Expiration1>Expiration of A</Expiration1>
+      <TM>OTM 1</TM>
+      <EX>1</EX>
+    </WizardTable>
+    <WizardTable>
+      <Index>D</Index>
+      <Type>Long Put</Type>
+      <Quantity>1</Quantity>
+      <StrikeSign1>=</StrikeSign1>
+      <Strike1>Strike of C</Strike1>
+      <ExpirationSign1>=</ExpirationSign1>
+      <Expiration1>Expiration of B</Expiration1>
+      <TM>OTM 1</TM>
+      <EX>2</EX>
+    </WizardTable>
+  </strategy>
+  <strategy name="Neutral: Long Butterfly">
+    <WizardTable>
+      <Index>A</Index>
+      <Type>Short Put</Type>
+      <Quantity>1</Quantity>
+      <EndDate>Auto</EndDate>
+      <TM>ATM</TM>
+      <EX>1</EX>
+      <Description>http://www.samoasky.com/description/long_butterfly.html</Description>
+    </WizardTable>
+    <WizardTable>
+      <Index>B</Index>
+      <Type>Short Call</Type>
+      <Quantity>1</Quantity>
+      <StrikeSign1>=</StrikeSign1>
+      <Strike1>Strike of A</Strike1>
+      <ExpirationSign1>=</ExpirationSign1>
+      <Expiration1>Expiration of A</Expiration1>
+      <TM>ATM</TM>
+      <EX>1</EX>
+    </WizardTable>
+    <WizardTable>
+      <Index>C</Index>
+      <Type>Long Put</Type>
+      <Quantity>1</Quantity>
+      <StrikeSign1>&lt;</StrikeSign1>
+      <Strike1>Strike of A</Strike1>
+      <ExpirationSign1>=</ExpirationSign1>
+      <Expiration1>Expiration of A</Expiration1>
+      <TM>OTM 2</TM>
+      <EX>1</EX>
+    </WizardTable>
+    <WizardTable>
+      <Index>D</Index>
+      <Type>Long Call</Type>
+      <Quantity>1</Quantity>
+      <StrikeSign1>&gt;</StrikeSign1>
+      <Strike1>Strike of A</Strike1>
+      <ExpirationSign1>=</ExpirationSign1>
+      <Expiration1>Expiration of A</Expiration1>
+      <TM>OTM 2</TM>
+      <EX>1</EX>
+    </WizardTable>
+  </strategy>
+  <strategy name="Neutral: Double Diagonal Spread">
+    <WizardTable>
+      <Index>A</Index>
+      <Type>Short Put</Type>
+      <Quantity>1</Quantity>
+      <StrikeSign1>&lt;</StrikeSign1>
+      <Strike1>Stock-Price</Strike1>
+      <EndDate>Auto</EndDate>
+      <TM>OTM 1</TM>
+      <EX>1</EX>
+      <Description>http://www.samoasky.com/description/double_diagonal_spread.html</Description>
+    </WizardTable>
+    <WizardTable>
+      <Index>B</Index>
+      <Type>Short Call</Type>
+      <Quantity>1</Quantity>
+      <StrikeSign1>&gt;</StrikeSign1>
+      <Strike1>Stock-Price</Strike1>
+      <ExpirationSign1>=</ExpirationSign1>
+      <Expiration1>Expiration of A</Expiration1>
+      <TM>OTM 1</TM>
+      <EX>1</EX>
+    </WizardTable>
+    <WizardTable>
+      <Index>C</Index>
+      <Type>Long Put</Type>
+      <Quantity>1</Quantity>
+      <StrikeSign1>&lt;</StrikeSign1>
+      <Strike1>Strike of A</Strike1>
+      <ExpirationSign1>&gt;</ExpirationSign1>
+      <Expiration1>Expiration of A</Expiration1>
+      <TM>OTM 2</TM>
+      <EX>2</EX>
+    </WizardTable>
+    <WizardTable>
+      <Index>D</Index>
+      <Type>Long Call</Type>
+      <Quantity>1</Quantity>
+      <StrikeSign1>&gt;</StrikeSign1>
+      <Strike1>Strike of B</Strike1>
+      <ExpirationSign1>=</ExpirationSign1>
+      <Expiration1>Expiration of C</Expiration1>
+      <TM>OTM 2</TM>
+      <EX>2</EX>
+    </WizardTable>
+  </strategy>
+  <strategy name="Neutral: Long Iron Condor">
+    <WizardTable>
+      <Index>A</Index>
+      <Type>Short Put</Type>
+      <Quantity>1</Quantity>
+      <StrikeSign1>&lt;</StrikeSign1>
+      <Strike1>Stock-Price</Strike1>
+      <EndDate>Auto</EndDate>
+      <TM>OTM 1</TM>
+      <EX>1</EX>
+      <Description>http://www.samoasky.com/description/long_iron_condor.html</Description>
+    </WizardTable>
+    <WizardTable>
+      <Index>B</Index>
+      <Type>Short Call</Type>
+      <Quantity>1</Quantity>
+      <StrikeSign1>&gt;</StrikeSign1>
+      <Strike1>Stock-Price</Strike1>
+      <ExpirationSign1>=</ExpirationSign1>
+      <Expiration1>Expiration of A</Expiration1>
+      <TM>OTM 1</TM>
+      <EX>1</EX>
+    </WizardTable>
+    <WizardTable>
+      <Index>C</Index>
+      <Type>Long Put</Type>
+      <Quantity>1</Quantity>
+      <StrikeSign1>&lt;</StrikeSign1>
+      <Strike1>Strike of A</Strike1>
+      <ExpirationSign1>=</ExpirationSign1>
+      <Expiration1>Expiration of A</Expiration1>
+      <TM>OTM 2</TM>
+      <EX>1</EX>
+    </WizardTable>
+    <WizardTable>
+      <Index>D</Index>
+      <Type>Long Call</Type>
+      <Quantity>1</Quantity>
+      <StrikeSign1>&gt;</StrikeSign1>
+      <Strike1>Strike of B</Strike1>
+      <ExpirationSign1>=</ExpirationSign1>
+      <Expiration1>Expiration of A</Expiration1>
+      <TM>OTM 2</TM>
+      <EX>1</EX>
+    </WizardTable>
+  </strategy>
+</wizard>

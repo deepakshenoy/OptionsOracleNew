@@ -1,0 +1,1269 @@
+<?xml version="1.0" standalone="yes"?>
+<ConfigSet xmlns="http://tempuri.org/ConfigSet.xsd">
+  <CommissionsTable>
+    <Type>Long Stock</Type>
+    <PerTransaction>0</PerTransaction>
+    <PerUnit>0</PerUnit>
+  </CommissionsTable>
+  <CommissionsTable>
+    <Type>Short Stock</Type>
+    <PerTransaction>0</PerTransaction>
+    <PerUnit>0</PerUnit>
+  </CommissionsTable>
+  <CommissionsTable>
+    <Type>Long Call</Type>
+    <PerTransaction>0</PerTransaction>
+    <PerUnit>0</PerUnit>
+  </CommissionsTable>
+  <CommissionsTable>
+    <Type>Short Call</Type>
+    <PerTransaction>0</PerTransaction>
+    <PerUnit>0</PerUnit>
+  </CommissionsTable>
+  <CommissionsTable>
+    <Type>Long Put</Type>
+    <PerTransaction>0</PerTransaction>
+    <PerUnit>0</PerUnit>
+  </CommissionsTable>
+  <CommissionsTable>
+    <Type>Short Put</Type>
+    <PerTransaction>0</PerTransaction>
+    <PerUnit>0</PerUnit>
+  </CommissionsTable>
+  <MarginTable>
+    <Type>Long Stock</Type>
+    <Index>0</Index>
+    <Of>Cost</Of>
+    <Prc>50</Prc>
+  </MarginTable>
+  <MarginTable>
+    <Type>Long Call</Type>
+    <Index>1</Index>
+    <Of>Cost</Of>
+    <Prc>100</Prc>
+  </MarginTable>
+  <MarginTable>
+    <Type>Long Put</Type>
+    <Index>2</Index>
+    <Of>Cost</Of>
+    <Prc>100</Prc>
+  </MarginTable>
+  <MarginTable>
+    <Type>Short Naked Stock</Type>
+    <Index>3</Index>
+    <Of>Proceeds</Of>
+    <Prc>100</Prc>
+  </MarginTable>
+  <MarginTable>
+    <Type>Short Naked Stock</Type>
+    <Index>4</Index>
+    <Of>Underlying Stock Price</Of>
+    <Prc>50</Prc>
+  </MarginTable>
+  <MarginTable>
+    <Type>Short Naked Call</Type>
+    <Index>5</Index>
+    <Of>Proceeds</Of>
+    <Prc>100</Prc>
+  </MarginTable>
+  <MarginTable>
+    <Type>Short Naked Call</Type>
+    <Index>6</Index>
+    <Of>Underlying Stock Price</Of>
+    <Prc>20</Prc>
+  </MarginTable>
+  <MarginTable>
+    <Type>Short Naked Call</Type>
+    <Index>7</Index>
+    <Of>Out Of The Money</Of>
+    <Prc>-100</Prc>
+  </MarginTable>
+  <MarginTable>
+    <Type>Short Naked Call</Type>
+    <Index>8</Index>
+    <Of>To Minimum Of -</Of>
+  </MarginTable>
+  <MarginTable>
+    <Type>Short Naked Call</Type>
+    <Index>9</Index>
+    <Of>Underlying Stock Price</Of>
+    <Prc>10</Prc>
+  </MarginTable>
+  <MarginTable>
+    <Type>Short Naked Call</Type>
+    <Index>10</Index>
+    <Of>Proceeds</Of>
+    <Prc>100</Prc>
+  </MarginTable>
+  <MarginTable>
+    <Type>Short Naked Put</Type>
+    <Index>11</Index>
+    <Of>Proceeds</Of>
+    <Prc>100</Prc>
+  </MarginTable>
+  <MarginTable>
+    <Type>Short Naked Put</Type>
+    <Index>12</Index>
+    <Of>Underlying Stock Price</Of>
+    <Prc>20</Prc>
+  </MarginTable>
+  <MarginTable>
+    <Type>Short Naked Put</Type>
+    <Index>13</Index>
+    <Of>Out Of The Money</Of>
+    <Prc>-100</Prc>
+  </MarginTable>
+  <MarginTable>
+    <Type>Short Naked Put</Type>
+    <Index>14</Index>
+    <Of>To Minimum Of -</Of>
+  </MarginTable>
+  <MarginTable>
+    <Type>Short Naked Put</Type>
+    <Index>15</Index>
+    <Of>Exercise Price</Of>
+    <Prc>10</Prc>
+  </MarginTable>
+  <MarginTable>
+    <Type>Short Naked Put</Type>
+    <Index>16</Index>
+    <Of>Proceeds</Of>
+    <Prc>100</Prc>
+  </MarginTable>
+  <MarginTable>
+    <Type>Short Covered Stock</Type>
+    <Index>17</Index>
+    <Of>Maximum Loss Risk</Of>
+    <Prc>100</Prc>
+  </MarginTable>
+  <MarginTable>
+    <Type>Short Covered Call</Type>
+    <Index>18</Index>
+    <Of>Maximum Loss Risk</Of>
+    <Prc>100</Prc>
+  </MarginTable>
+  <MarginTable>
+    <Type>Short Covered Put</Type>
+    <Index>19</Index>
+    <Of>Maximum Loss Risk</Of>
+    <Prc>100</Prc>
+  </MarginTable>
+  <MarginTable>
+    <Type>Short Put Covered By Short Call</Type>
+    <Index>20</Index>
+    <Of>Proceeds</Of>
+    <Prc>100</Prc>
+  </MarginTable>
+  <MarginTable>
+    <Type>Short Call Covered By Short Put</Type>
+    <Index>21</Index>
+    <Of>Proceeds</Of>
+    <Prc>100</Prc>
+  </MarginTable>
+  <MarginTable>
+    <Type>Short Put Spread Covered By Short Call Spread</Type>
+    <Index>22</Index>
+    <Of>Zero</Of>
+    <Prc>100</Prc>
+  </MarginTable>
+  <MarginTable>
+    <Type>Short Call Spread Covered By Short Put Spread</Type>
+    <Index>23</Index>
+    <Of>Zero</Of>
+    <Prc>100</Prc>
+  </MarginTable>
+  <InterestTable>
+    <Type>Debit</Type>
+    <Interest>0</Interest>
+  </InterestTable>
+  <InterestTable>
+    <Type>Credit</Type>
+    <Interest>0</Interest>
+  </InterestTable>
+  <InterestTable>
+    <Type>Federal</Type>
+    <Interest>0</Interest>
+  </InterestTable>
+  <ParametersTable>
+    <Parameter>Option Calculation Prices</Parameter>
+    <Value>Ask/Bid Prices</Value>
+  </ParametersTable>
+  <ParametersTable>
+    <Parameter>Stock Calculation Prices</Parameter>
+    <Value>Last Price</Value>
+  </ParametersTable>
+  <ParametersTable>
+    <Parameter>Simple Options Commission</Parameter>
+    <Value>Yes</Value>
+  </ParametersTable>
+  <ParametersTable>
+    <Parameter>Created with Version</Parameter>
+    <Value>1.6.1.0</Value>
+  </ParametersTable>
+  <ParametersTable>
+    <Parameter>Installation Date</Parameter>
+    <Value>6/2/2015</Value>
+  </ParametersTable>
+  <ParametersTable>
+    <Parameter>Last Version Check</Parameter>
+    <Value>1.6.0.0</Value>
+  </ParametersTable>
+  <ParametersTable>
+    <Parameter>Remote Configuration</Parameter>
+    <Value>http://www.samoasky.com/optionsoracle_config.xml</Value>
+  </ParametersTable>
+  <ParametersTable>
+    <Parameter>Online Server</Parameter>
+    <Value>PlugIn Server India (NSE) v1.8.4 by Santosh Kumar Pasi &lt;santoshpasi@yahoo.com&gt;</Value>
+  </ParametersTable>
+  <ParametersTable>
+    <Parameter>Server Mode</Parameter>
+    <Value />
+  </ParametersTable>
+  <ParametersTable>
+    <Parameter>Auto Refresh</Parameter>
+    <Value>900</Value>
+  </ParametersTable>
+  <ParametersTable>
+    <Parameter>Federal Interest Auto Update</Parameter>
+    <Value>Enabled</Value>
+  </ParametersTable>
+  <ParametersTable>
+    <Parameter>Volatility Mode</Parameter>
+    <Value>Option IV</Value>
+  </ParametersTable>
+  <ParametersTable>
+    <Parameter>Fixed Volatility</Parameter>
+    <Value>40.00</Value>
+  </ParametersTable>
+  <ParametersTable>
+    <Parameter>Download Historical Volatility</Parameter>
+    <Value>Yes</Value>
+  </ParametersTable>
+  <ParametersTable>
+    <Parameter>Use Historical Volatility For StdDev</Parameter>
+    <Value>No</Value>
+  </ParametersTable>
+  <ParametersTable>
+    <Parameter>Implied Volatility Fallback</Parameter>
+    <Value>No</Value>
+  </ParametersTable>
+  <ParametersTable>
+    <Parameter>Historical Volatility Algorithm</Parameter>
+    <Value>Historical Low-to-High (Parkinson)</Value>
+  </ParametersTable>
+  <ParametersTable>
+    <Parameter>Last Wizard Stock List</Parameter>
+    <Value />
+  </ParametersTable>
+  <ParametersTable>
+    <Parameter>Pricing Model</Parameter>
+    <Value>BlackScholes</Value>
+  </ParametersTable>
+  <ParametersTable>
+    <Parameter>Binominal Steps</Parameter>
+    <Value>50</Value>
+  </ParametersTable>
+  <ParametersTable>
+    <Parameter>Customization Mode</Parameter>
+    <Value />
+  </ParametersTable>
+  <ParametersTable>
+    <Parameter>Portfolio List</Parameter>
+    <Value>My Portfolio</Value>
+  </ParametersTable>
+  <ParametersTable>
+    <Parameter>PlugIn Server India (NSE) v1.8.3 Version</Parameter>
+    <Value>1.8.3.0</Value>
+  </ParametersTable>
+  <ParametersTable>
+    <Parameter>Server Was Selected</Parameter>
+    <Value>Yes</Value>
+  </ParametersTable>
+  <ParametersTable>
+    <Parameter>Options Table (Default Mode) Frozen Columns</Parameter>
+    <Value>3</Value>
+  </ParametersTable>
+  <ParametersTable>
+    <Parameter>Graph Show Point Values</Parameter>
+    <Value>False</Value>
+  </ParametersTable>
+  <ParametersTable>
+    <Parameter>PlugIn Server India (NSE) Version</Parameter>
+    <Value>1.8.0.0</Value>
+  </ParametersTable>
+  <ParametersTable>
+    <Parameter>PlugIn Server OptionsOracle (DataCenter) Version</Parameter>
+    <Value>1.8.0.0</Value>
+  </ParametersTable>
+  <ParametersTable>
+    <Parameter>Use Proxy</Parameter>
+    <Value>No</Value>
+  </ParametersTable>
+  <ParametersTable>
+    <Parameter>Proxy Address</Parameter>
+    <Value>127.0.0.1:8080,,</Value>
+  </ParametersTable>
+  <ParametersTable>
+    <Parameter>Last Command</Parameter>
+    <Value>0</Value>
+  </ParametersTable>
+  <ParametersTable>
+    <Parameter>Portfolio (My Portfolio)</Parameter>
+    <Value />
+  </ParametersTable>
+  <ParametersTable>
+    <Parameter>PlugIn Server India (NSE) v1.8.4 Version</Parameter>
+    <Value>1.8.4.0</Value>
+  </ParametersTable>
+  <ParametersTable>
+    <Parameter>PlugIn Server India (NSE) v1.8.4by Santosh Kumar Pasi &lt;santoshpasi@yahoo.com Version</Parameter>
+    <Value>1.8.4.0</Value>
+  </ParametersTable>
+  <ParametersTable>
+    <Parameter>PlugIn Server India (NSE) v1.8.4 by Santosh Kumar Pasi &lt;santoshpasi@yahoo.com Version</Parameter>
+    <Value>1.8.4.0</Value>
+  </ParametersTable>
+  <ParametersTable>
+    <Parameter>PlugIn Server India (NSE) v1.8.4 by Santosh Kumar Pasi &lt;santoshpasi@yahoo.com&gt; Version</Parameter>
+    <Value>1.8.4.0</Value>
+  </ParametersTable>
+  <ParametersTable>
+    <Parameter>PlugIn Server India (NSE) v1.8.4by Santosh Pasi &lt;santoshpasi@yahoo.com&gt; Version</Parameter>
+    <Value>1.8.4.0</Value>
+  </ParametersTable>
+  <ParametersTable>
+    <Parameter>Last Predefined Strategy</Parameter>
+    <Value>Neutral: Short Strangle</Value>
+  </ParametersTable>
+  <ParametersTable>
+    <Parameter>Last Predefined Show Options Strategy</Parameter>
+    <Value>False</Value>
+  </ParametersTable>
+  <ParametersTable>
+    <Parameter>Last Predefined Start Expiration Date Strategy</Parameter>
+    <Value />
+  </ParametersTable>
+  <ParametersTable>
+    <Parameter>Last Predefined Add Strategy</Parameter>
+    <Value>False</Value>
+  </ParametersTable>
+  <CriteriaTable>
+    <Criteria>Maximum Profit Potential</Criteria>
+    <Index>300</Index>
+  </CriteriaTable>
+  <CriteriaTable>
+    <Criteria>Maximum Loss Risk</Criteria>
+    <Index>400</Index>
+  </CriteriaTable>
+  <CriteriaTable>
+    <Criteria>Lower Protection</Criteria>
+    <Index>500</Index>
+  </CriteriaTable>
+  <CriteriaTable>
+    <Criteria>Lower Breakeven</Criteria>
+    <Index>600</Index>
+  </CriteriaTable>
+  <CriteriaTable>
+    <Criteria>Upper Protection</Criteria>
+    <Index>700</Index>
+  </CriteriaTable>
+  <CriteriaTable>
+    <Criteria>Upper Breakeven</Criteria>
+    <Index>800</Index>
+  </CriteriaTable>
+  <CriteriaTable>
+    <Criteria>Return if Unchanged</Criteria>
+    <Index>900</Index>
+  </CriteriaTable>
+  <CriteriaTable>
+    <Criteria>Current Return</Criteria>
+    <Index>1200</Index>
+  </CriteriaTable>
+  <CriteriaTable>
+    <Criteria>Total Delta</Criteria>
+    <Index>1300</Index>
+  </CriteriaTable>
+  <CriteriaTable>
+    <Criteria>Total Theta [day]</Criteria>
+    <Index>1400</Index>
+  </CriteriaTable>
+  <CriteriaTable>
+    <Criteria>Expected Return</Criteria>
+    <Index>1600</Index>
+  </CriteriaTable>
+  <CriteriaTable>
+    <Criteria>Total Vega [% volatility]</Criteria>
+    <Index>1500</Index>
+  </CriteriaTable>
+  <TableViewTable>
+    <Key>Options Table (Default Mode).optionsTypeColumn</Key>
+    <Column>Type</Column>
+    <Index>0</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Options Table (Default Mode).optionsStrikeColumn</Key>
+    <Column>Strike</Column>
+    <Index>1</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Options Table (Default Mode).optionsExpirationColumn</Key>
+    <Column>Expiration</Column>
+    <Index>2</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Options Table (Default Mode).optionsSymbolColumn</Key>
+    <Column>Symbol</Column>
+    <Index>3</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Options Table (Default Mode).optionsLastColumn</Key>
+    <Column>Last</Column>
+    <Index>4</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Options Table (Default Mode).optionsChangeColumn</Key>
+    <Column>Change</Column>
+    <Index>5</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Options Table (Default Mode).optionsTimeValueColumn</Key>
+    <Column>TimeValue</Column>
+    <Index>6</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Options Table (Default Mode).optionsBidColumn</Key>
+    <Column>Bid</Column>
+    <Index>7</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Options Table (Default Mode).optionsAskColumn</Key>
+    <Column>Ask</Column>
+    <Index>8</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Options Table (Default Mode).optionsVolumeColumn</Key>
+    <Column>Volume</Column>
+    <Index>9</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Options Table (Default Mode).optionsOpenIntColumn</Key>
+    <Column>OpenInt</Column>
+    <Index>10</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Options Table (Default Mode).optionsImpliedVolatilityColumn</Key>
+    <Column>ImpV</Column>
+    <Index>11</Index>
+    <Visable>false</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Options Table (Default Mode).optionsITMProbColumn</Key>
+    <Column>ITM Prob</Column>
+    <Index>12</Index>
+    <Visable>false</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Options Table (Default Mode).optionsDeltaColumn</Key>
+    <Column>Delta</Column>
+    <Index>13</Index>
+    <Visable>false</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Options Table (Default Mode).optionsGammaColumn</Key>
+    <Column>Gamma</Column>
+    <Index>14</Index>
+    <Visable>false</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Options Table (Default Mode).optionsVegaColumn</Key>
+    <Column>Vega</Column>
+    <Index>15</Index>
+    <Visable>false</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Options Table (Default Mode).optionsThetaColumn</Key>
+    <Column>Theta</Column>
+    <Index>16</Index>
+    <Visable>false</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Options Table (Default Mode).optionsStdDevColumn</Key>
+    <Column>Strike SD</Column>
+    <Index>17</Index>
+    <Visable>false</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Options Table (Default Mode).optionsIndicator1Column</Key>
+    <Column>Indicator 1</Column>
+    <Index>18</Index>
+    <Visable>false</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Options Table (Default Mode).optionsIndicator2Column</Key>
+    <Column>Indicator 2</Column>
+    <Index>19</Index>
+    <Visable>false</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Options Table (Greeks Mode).optionsTypeColumn</Key>
+    <Column>Type</Column>
+    <Index>0</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Options Table (Greeks Mode).optionsStrikeColumn</Key>
+    <Column>Strike</Column>
+    <Index>1</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Options Table (Greeks Mode).optionsExpirationColumn</Key>
+    <Column>Expiration</Column>
+    <Index>2</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Options Table (Greeks Mode).optionsSymbolColumn</Key>
+    <Column>Symbol</Column>
+    <Index>3</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Options Table (Greeks Mode).optionsLastColumn</Key>
+    <Column>Last</Column>
+    <Index>4</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Options Table (Greeks Mode).optionsChangeColumn</Key>
+    <Column>Change</Column>
+    <Index>5</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Options Table (Greeks Mode).optionsTimeValueColumn</Key>
+    <Column>TimeValue</Column>
+    <Index>6</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Options Table (Greeks Mode).optionsBidColumn</Key>
+    <Column>Bid</Column>
+    <Index>7</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Options Table (Greeks Mode).optionsAskColumn</Key>
+    <Column>Ask</Column>
+    <Index>8</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Options Table (Greeks Mode).optionsVolumeColumn</Key>
+    <Column>Volume</Column>
+    <Index>9</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Options Table (Greeks Mode).optionsOpenIntColumn</Key>
+    <Column>OpenInt</Column>
+    <Index>10</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Options Table (Greeks Mode).optionsImpliedVolatilityColumn</Key>
+    <Column>Implied Volatility</Column>
+    <Index>11</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Options Table (Greeks Mode).optionsITMProbColumn</Key>
+    <Column>In-The-Money Probability</Column>
+    <Index>12</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Options Table (Greeks Mode).optionsDeltaColumn</Key>
+    <Column>Delta</Column>
+    <Index>13</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Options Table (Greeks Mode).optionsGammaColumn</Key>
+    <Column>Gamma</Column>
+    <Index>14</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Options Table (Greeks Mode).optionsVegaColumn</Key>
+    <Column>Vega</Column>
+    <Index>15</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Options Table (Greeks Mode).optionsThetaColumn</Key>
+    <Column>Theta</Column>
+    <Index>16</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Options Table (Greeks Mode).optionsStdDevColumn</Key>
+    <Column>Strike SD</Column>
+    <Index>17</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Options Table (Greeks Mode).optionsIndicator1Column</Key>
+    <Column>Indicator 1</Column>
+    <Index>18</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Options Table (Greeks Mode).optionsIndicator2Column</Key>
+    <Column>Indicator 2</Column>
+    <Index>19</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Market Strategy Table.positionsEnableColumn</Key>
+    <Column>Enable</Column>
+    <Index>0</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Market Strategy Table.positionsTypeColumn</Key>
+    <Column>Type</Column>
+    <Index>1</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Market Strategy Table.positionsStrikeColumn</Key>
+    <Column>Strike</Column>
+    <Index>2</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Market Strategy Table.positionsExpirationColumn</Key>
+    <Column>Expiration</Column>
+    <Index>3</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Market Strategy Table.positionsSymbolColumn</Key>
+    <Column>Symbol</Column>
+    <Index>4</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Market Strategy Table.positionsQuantityColumn</Key>
+    <Column>Quantity</Column>
+    <Index>5</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Market Strategy Table.positionsToOpenColumn</Key>
+    <Column>Opn/Cls</Column>
+    <Index>6</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Market Strategy Table.positionsPriceColumn</Key>
+    <Column>Price</Column>
+    <Index>7</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Market Strategy Table.positionsLastPriceColumn</Key>
+    <Column>Last Price</Column>
+    <Index>8</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Market Strategy Table.positionsVolatilityColumn</Key>
+    <Column>Volatility %</Column>
+    <Index>9</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Market Strategy Table.positionsCommissionColumn</Key>
+    <Column>Commission</Column>
+    <Index>10</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Market Strategy Table.positionsNetMarginColumn</Key>
+    <Column>Margin</Column>
+    <Index>11</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Market Strategy Table.positionsMktValueColumn</Key>
+    <Column>Debit</Column>
+    <Index>12</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Market Strategy Table.positionsInvestmentColumn</Key>
+    <Column>Investment</Column>
+    <Index>13</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Market Strategy Table.positionsDeltaColumn</Key>
+    <Column>Delta</Column>
+    <Index>14</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Market Strategy Table.positionsGammaColumn</Key>
+    <Column>Gamma</Column>
+    <Index>15</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Market Strategy Table.positionsVegaColumn</Key>
+    <Column>Vega</Column>
+    <Index>16</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Market Strategy Table.positionsThetaColumn</Key>
+    <Column>Theta</Column>
+    <Index>17</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Market Strategy Table.positionsTimeValueColumn</Key>
+    <Column>TimeValue</Column>
+    <Index>18</Index>
+    <Visable>false</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Market Strategy Table.positionsInterestColumn</Key>
+    <Column>Interest</Column>
+    <Index>19</Index>
+    <Visable>false</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Strategy Summary Table.resultsCriteriaColumn</Key>
+    <Column>Criteria</Column>
+    <Index>0</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Strategy Summary Table.resultsPriceColumn</Key>
+    <Column>Price</Column>
+    <Index>1</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Strategy Summary Table.resultsChangeColumn</Key>
+    <Column>Change</Column>
+    <Index>2</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Strategy Summary Table.resultsProbColumn</Key>
+    <Column>Probability</Column>
+    <Index>3</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Strategy Summary Table.resultsTotalColumn</Key>
+    <Column>Total</Column>
+    <Index>4</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Strategy Summary Table.resultsTotalPrcColumn</Key>
+    <Column>Total %</Column>
+    <Index>5</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Strategy Summary Table.resultsMonthlyPrcColumn</Key>
+    <Column>Total Monthly %</Column>
+    <Index>6</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Portfolio Table.portfolioStockColumn</Key>
+    <Column>Stock</Column>
+    <Index>0</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Portfolio Table.portfolioNameColumn</Key>
+    <Column>Strategy Name</Column>
+    <Index>1</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Portfolio Table.portfolioStockLastPriceColumn</Key>
+    <Column>Last Price</Column>
+    <Index>2</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Portfolio Table.portfolioStockImpVolatilityColumn</Key>
+    <Column>Stock Implied Volatility</Column>
+    <Index>3</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Portfolio Table.portfolioStockHisVolatilityColumn</Key>
+    <Column>Stock Historical Volatility</Column>
+    <Index>4</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Portfolio Table.portfolioStartDateColumn</Key>
+    <Column>Start Date</Column>
+    <Index>5</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Portfolio Table.portfolioEndDateColumn</Key>
+    <Column>End Date</Column>
+    <Index>6</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Portfolio Table.portfolioNetInvestmentColumn</Key>
+    <Column>Net Investment</Column>
+    <Index>7</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Portfolio Table.portfolioReturnIfUnchangeColumn</Key>
+    <Column>Return If Unchange</Column>
+    <Index>8</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Portfolio Table.portfolioReturnIfUnchangePrcColumn</Key>
+    <Column>Return If Unchange %</Column>
+    <Index>9</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Portfolio Table.portfolioCurrentReturnColumn</Key>
+    <Column>Current Return</Column>
+    <Index>10</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Portfolio Table.portfolioCurrentReturnPrcColumn</Key>
+    <Column>Current Return %</Column>
+    <Index>11</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Portfolio Table.portfolioReturnAtTargetColumn</Key>
+    <Column>Return At Target</Column>
+    <Index>12</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Portfolio Table.portfolioReturnAtTargetPrcColumn</Key>
+    <Column>Return At Target %</Column>
+    <Index>13</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Portfolio Table.portfolioMaxProfitPotentialColumn</Key>
+    <Column>Max Profit Potential</Column>
+    <Index>14</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Portfolio Table.portfolioMaxProfitPotentialPrcColumn</Key>
+    <Column>Max Profit Potential %</Column>
+    <Index>15</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Portfolio Table.portfolioMaxLossRiskColumn</Key>
+    <Column>Max Loss Risk</Column>
+    <Index>16</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Portfolio Table.portfolioMaxLossRiskPrcColumn</Key>
+    <Column>Max Loss Risk %</Column>
+    <Index>17</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Portfolio Table.portfolioLowerBreakevenColumn</Key>
+    <Column>Lower Breakeven</Column>
+    <Index>18</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Portfolio Table.portfolioUpperBreakevenColumn</Key>
+    <Column>Upper Breakeven</Column>
+    <Index>19</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Portfolio Table.portfolioBreakevenProbColumn</Key>
+    <Column>Breakeven Prob</Column>
+    <Index>20</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Portfolio Table.portfolioBreakevenPriceColumn</Key>
+    <Column>Breakeven Price</Column>
+    <Index>21</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Portfolio Table.portfolioInterestPaidColumn</Key>
+    <Column>Interest Paid</Column>
+    <Index>22</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Portfolio Table.portfolioTotalDeltaColumn</Key>
+    <Column>Total Delta</Column>
+    <Index>23</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Portfolio Table.portfolioTotalGammaColumn</Key>
+    <Column>Total Gamma</Column>
+    <Index>24</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Portfolio Table.portfolioTotalThetaColumn</Key>
+    <Column>Total Theta</Column>
+    <Index>25</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Portfolio Table.portfolioTotalVegaColumn</Key>
+    <Column>Total Vega</Column>
+    <Index>26</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Portfolio Table.portfolioExpectedReturnColumn</Key>
+    <Column>Expected Return</Column>
+    <Index>27</Index>
+    <Visable>false</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Portfolio Table.portfolioExpectedReturnPrcColumn</Key>
+    <Column>Expected Return %</Column>
+    <Index>28</Index>
+    <Visable>false</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Analysis Table.resultsPriceColumn</Key>
+    <Column>Underlying</Column>
+    <Index>0</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Analysis Table.resultsVolatilityColumn</Key>
+    <Column>Volatility %</Column>
+    <Index>1</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Analysis Table.resultsEndDateColumn</Key>
+    <Column>Date</Column>
+    <Index>2</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Analysis Table.resultsProfitColumn</Key>
+    <Column>Profit</Column>
+    <Index>3</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Analysis Table.resultsProfitPrcColumn</Key>
+    <Column>Profit %</Column>
+    <Index>4</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Analysis Table.resultsDeltaColumn</Key>
+    <Column>Delta</Column>
+    <Index>5</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Analysis Table.resultsGammaColumn</Key>
+    <Column>Gamma</Column>
+    <Index>6</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Analysis Table.resultsThetaColumn</Key>
+    <Column>Theta [Day]</Column>
+    <Index>7</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Analysis Table.resultsVegaColumn</Key>
+    <Column>Vega [% Vol]</Column>
+    <Index>8</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Wizard Results Table.wizardResultsIndexColumn</Key>
+    <Column>Id</Column>
+    <Index>0</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Wizard Results Table.wizardResultsStockColumn</Key>
+    <Column>Stock</Column>
+    <Index>1</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Wizard Results Table.wizardResultsPositionColumn</Key>
+    <Column>Position</Column>
+    <Index>2</Index>
+    <Visable>false</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Wizard Results Table.wizardResultsEndDateColumn</Key>
+    <Column>End Date</Column>
+    <Index>3</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Wizard Results Table.wizardResultsNetInvestmentColumn</Key>
+    <Column>Total Investment</Column>
+    <Index>4</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Wizard Results Table.wizardResultsTotalDebitColumn</Key>
+    <Column>Total Debit</Column>
+    <Index>5</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Wizard Results Table.wizardResultsMaxProfitPotentialColumn</Key>
+    <Column>Max Profit Potential</Column>
+    <Index>6</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Wizard Results Table.wizardResultsMaxProfitPotentialPrcColumn</Key>
+    <Column>Max Profit Potential %</Column>
+    <Index>7</Index>
+    <Visable>false</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Wizard Results Table.wizardResultsMaxLossRiskColumn</Key>
+    <Column>Max Loss Risk</Column>
+    <Index>8</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Wizard Results Table.wizardResultsMaxLossRiskPrcColumn</Key>
+    <Column>Max Loss Risk %</Column>
+    <Index>9</Index>
+    <Visable>false</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Wizard Results Table.wizardResultsLowerBreakevenColumn</Key>
+    <Column>Lower Prot. / Breakeven</Column>
+    <Index>10</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Wizard Results Table.wizardResultsUpperBreakevenColumn</Key>
+    <Column>Upper Prot. / Breakeven</Column>
+    <Index>11</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Wizard Results Table.wizardResultsReturnAtMovementColumn</Key>
+    <Column>Return if Unchanged</Column>
+    <Index>12</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Wizard Results Table.wizardResultsReturnAtMovementPrcColumn</Key>
+    <Column>1Mo % Retn if Unchanged</Column>
+    <Index>13</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Wizard Results Table.wizardResultsMeanReturnColumn</Key>
+    <Column>Expected Return</Column>
+    <Index>14</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Wizard Results Table.wizardResultsMeanReturnPrcColumn</Key>
+    <Column>1Mo % Expc-Return</Column>
+    <Index>15</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Wizard Results Table.wizardResultsTotalDeltaColumn</Key>
+    <Column>Total Delta</Column>
+    <Index>16</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Wizard Results Table.wizardResultsTotalGammaColumn</Key>
+    <Column>Total Gamma</Column>
+    <Index>17</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Wizard Results Table.wizardResultsTotalThetaColumn</Key>
+    <Column>Total Theta</Column>
+    <Index>18</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Wizard Results Table.wizardResultsTotalVegaColumn</Key>
+    <Column>Total Vega</Column>
+    <Index>19</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Wizard Results Table.wizardResultsInterestPaidColumn</Key>
+    <Column>Interest Paid</Column>
+    <Index>20</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Wizard Results Table.wizardResultsBreakevenProbColumn</Key>
+    <Column>Breakeven Prob</Column>
+    <Index>21</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Wizard Results Table.wizardResultsProtectionProbColumn</Key>
+    <Column>Protection Prob</Column>
+    <Index>22</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Wizard Results Table.wizardResultsProfitLossRatioColumn</Key>
+    <Column>Profit/Loss Ratio</Column>
+    <Index>23</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Wizard Results Table.wizardResultsStockLastPriceColumn</Key>
+    <Column>StockLastPrice</Column>
+    <Index>24</Index>
+    <Visable>false</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Wizard Results Table.wizardResultsStockImpVolatilityColumn</Key>
+    <Column>Stock ImpVol</Column>
+    <Index>25</Index>
+    <Visable>true</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Wizard Results Table.wizardResultsStockHisVolatilityColumn</Key>
+    <Column>StockHisVolatility</Column>
+    <Index>26</Index>
+    <Visable>false</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Wizard Results Table.wizardResultsIndicator1Column</Key>
+    <Column>Ind 1</Column>
+    <Index>27</Index>
+    <Visable>false</Visable>
+  </TableViewTable>
+  <TableViewTable>
+    <Key>Wizard Results Table.wizardResultsIndicator2Column</Key>
+    <Column>Ind 2</Column>
+    <Index>28</Index>
+    <Visable>false</Visable>
+  </TableViewTable>
+  <LinksTable>
+    <Index>0</Index>
+    <Type>Null</Type>
+    <Name />
+    <Link />
+  </LinksTable>
+  <LinksTable>
+    <Index>1</Index>
+    <Type>Underlying</Type>
+    <Name>Open in Yahoo Finance...</Name>
+    <Link>http://finance.yahoo.com/q?s={symbol}</Link>
+  </LinksTable>
+  <LinksTable>
+    <Index>2</Index>
+    <Type>Underlying</Type>
+    <Name>Open in MSN Money...</Name>
+    <Link>http://moneycentral.msn.com/detail/stock_quote?Symbol={symbol}</Link>
+  </LinksTable>
+  <LinksTable>
+    <Index>3</Index>
+    <Type>Underlying</Type>
+    <Name>Open in Earnings.Com...</Name>
+    <Link>http://www.earnings.com/company.asp?client=cb&amp;ticker={symbol}</Link>
+  </LinksTable>
+  <LinksTable>
+    <Index>4</Index>
+    <Type>Underlying</Type>
+    <Name>Open in BigCharts...</Name>
+    <Link>http://bigcharts.marketwatch.com/advchart/frames/frames.asp?symb={symbol}</Link>
+  </LinksTable>
+  <LinksTable>
+    <Index>5</Index>
+    <Type>Underlying</Type>
+    <Name>Open in Bloomberg...</Name>
+    <Link>http://www.bloomberg.com/apps/quote?ticker={symbol}</Link>
+  </LinksTable>
+  <LinksTable>
+    <Index>6</Index>
+    <Type>Underlying</Type>
+    <Name>Open in MorningStar...</Name>
+    <Link>http://quote.morningstar.com/Quote/Quote.aspx?ticker={symbol}</Link>
+  </LinksTable>
+  <LinksTable>
+    <Index>7</Index>
+    <Type>Underlying</Type>
+    <Name>Open in MorningStar (Index)...</Name>
+    <Link>http://quote.morningstar.com/Index/Quote.aspx?ticker={symbol}</Link>
+  </LinksTable>
+  <LinksTable>
+    <Index>8</Index>
+    <Type>Underlying</Type>
+    <Name>Open in Finviz.Com...</Name>
+    <Link>http://finviz.com/quote.ashx?t={symbol}</Link>
+  </LinksTable>
+  <LinksTable>
+    <Index>9</Index>
+    <Type>Underlying</Type>
+    <Name>Seperator</Name>
+    <Link />
+  </LinksTable>
+  <LinksTable>
+    <Index>10</Index>
+    <Type>Underlying</Type>
+    <Name>Open MSN Screener Delux...</Name>
+    <Link>http://moneycentral.msn.com/investor/finder/customstocks.asp?tools=standard#Big</Link>
+  </LinksTable>
+</ConfigSet>

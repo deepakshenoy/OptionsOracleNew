@@ -1,0 +1,531 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<parser xmlns="http://www.samoasky.com/optionsoracle_parser.xml" version="1.8.0.0">
+  <global>
+    <String.Assign var="const.interest.eu" string="1.00" />
+    <String.Assign var="const.interest.australia" string="3.75" />
+  </global>
+  <server name="Dynamic Server Europe 1" modes="Germany [Stuttgart Stock Exchange];Germany [Frankfurt Stock Exchange];Germany [Düsseldorf Stock Exchange];Italy [Milano Stock Exchange]" accuracy="4" stocks_per_contract="10" features="options,quote,lookup,history">
+    <interest args="server,mode">
+      <!-- clear result list -->
+      <List.Clear />
+      <!-- add string to result list -->
+      <List.AddString string="{const.interest.eu}" />
+      <List.TrimToSize />
+    </interest>
+    <quote args="server,mode,ticker">
+      <!-- clear result list -->
+      <List.Clear />
+      <!-- get state -->
+      <String.Split var="split0" string="{mode}" tokens=" " />
+      <String.Assign var="state" string="{split0[0]}" />
+      <!-- set culture -->
+      <If.Switch arg1="{state}">
+        <If.Case name="Germany">
+          <String.Culture culture="de-DE" />
+          <String.Assign var="site" string="de.finance.yahoo.com" />
+          <String.Assign var="sufx" string="DE" />
+        </If.Case>
+        <If.Case name="Italy">
+          <String.Culture culture="it-IT" />
+          <String.Assign var="site" string="it.finance.yahoo.com" />
+          <String.Assign var="sufx" string="MI" />
+        </If.Case>
+      </If.Switch>
+      <!-- download page -->
+      <If.Contain arg1="{ticker}" arg2=".">
+        <Then>
+          <Web.DownloadXml var="page" url="http://{site}/q?s={ticker}" start_token="&lt;body;1" end_token="&lt;/body;1" />
+        </Then>
+        <Else>
+          <Web.DownloadXml var="page" url="http://{site}/q?s={ticker}.{sufx}" start_token="&lt;body;1" end_token="&lt;/body;1" />
+        </Else>
+      </If.Contain>
+      <!-- set stock ticker -->
+      <String.Assign var="quote.stock" string="{ticker}" />
+      <!-- get base div and stock name node -->
+      <Xml.InnerText var="stmp" doc="page" path="body\div\div(2)\div(1)\h1" />
+      <String.Assign var="div_idx" string="3" />
+      <If.Equal arg1="{stmp}" arg2="(null)">
+        <Then>
+          <Xml.InnerText var="stmp" doc="page" path="body\div\div(2)\div(2)\h1" />
+          <String.Assign var="div_idx" string="4" />
+        </Then>
+        <Else />
+      </If.Equal>
+      <If.Equal arg1="{stmp}" arg2="(null)">
+        <Then>
+          <Xml.InnerText var="stmp" doc="page" path="body\div\div\table(4)\tr\td" />
+        </Then>
+        <Else />
+      </If.Equal>
+      <!-- get stock name -->
+      <String.Split var="split1" string="{stmp}" tokens="()" />
+      <String.Trim var="quote.name" string="{split1[0]}" />
+      <String.Replace var="quote.name" string="{quote.name}" old_string="&amp;amp;" new_string="&amp;" />
+      <!-- set root table path -->
+      <String.Assign var="root_1" string="body\div\div(2)\div({div_idx})\div(2)\div\div(3)\table(1)" />
+      <String.Assign var="root_2" string="body\div\div(2)\div({div_idx})\div(2)\div\div(3)\table(2)" />
+      <Xml.InnerText var="stmp" doc="page" path="{root_1}\tr(1)\td(2)" />
+      <If.Equal arg1="{stmp}" arg2="(null)">
+        <Then>
+          <String.Assign var="root_1" string="body\div\div(2)\div({div_idx})\div(2)\div\div(2)\table(1)" />
+          <String.Assign var="root_2" string="body\div\div(2)\div({div_idx})\div(2)\div\div(2)\table(2)" />
+        </Then>
+        <Else />
+      </If.Equal>
+      <Xml.InnerText var="stmp" doc="page" path="{root_1}\tr(1)" />
+      <If.Equal arg1="{stmp}" arg2="(null)">
+        <Then>
+          <String.Assign var="root_1" string="body\div\div(3)\br\table\tr\td\table(3)\tr\td\table\tr\td\table" />
+          <String.Assign var="root_2" string="body\div\div(3)\br\table\tr\td\table(3)\tr\td(3)\table\tr\td\table" />
+        </Then>
+        <Else />
+      </If.Equal>
+      <Xml.InnerText var="stmp" doc="page" path="{root_1}\tr(1)\th(1)" />
+      <If.Equal arg1="{stmp}" arg2="(null)">
+        <Then>
+          <String.Assign var="colm" string="td(2)" />
+        </Then>
+        <Else>
+          <String.Assign var="colm" string="td(1)" />
+        </Else>
+      </If.Equal>
+      <!-- get last price -->
+      <Xml.InnerText var="stmp" doc="page" path="{root_1}\tr(1)\{colm}" />
+      <Loop.BreakIfEqual arg1="{stmp}" arg2="(null)" />
+      <String.Split var="split0" string="{stmp}" tokens=" " />
+      <Double.Decimal var="quote.price.last" arg1="{split0[0]}" fmt="N3" />
+      <!-- get date and time -->
+      <DateTime.Now var="date" fmt="dd/MM/yyyy" />
+      <String.Assign var="time" string="04:00PM" />
+      <Xml.InnerText var="stmp" doc="page" path="{root_1}\tr(2)\{colm}" />
+      <String.Split var="split1" string="{stmp}" tokens=" -" />
+      <Loop.TryCatch>
+        <If.Contain arg1="{split1[0]}" arg2="AM">
+          <Then>
+            <DateTime.TimeOfDay var="time" string="{split1[0]}" />
+          </Then>
+          <Else>
+            <If.Contain arg1="{split1[0]}" arg2="PM">
+              <Then>
+                <DateTime.TimeOfDay var="time" string="{split1[0]}" />
+              </Then>
+            </If.Contain>
+          </Else>
+        </If.Contain>
+      </Loop.TryCatch>
+      <String.Assign var="quote.update_timestamp" string="{time} {date}" />
+      <!-- get open price -->
+      <Xml.InnerText var="stmp" doc="page" path="{root_1}\tr(4)\{colm}" />
+      <If.Equal arg1="{stmp}" arg2="N/A">
+        <Then>
+          <Xml.InnerText var="stmp" doc="page" path="{root_1}\tr(5)\{colm}" />
+        </Then>
+      </If.Equal>
+      <Double.Decimal var="quote.price.open" arg1="{stmp}" fmt="N3" />
+      <!-- get price change -->
+      <Double.Subtract var="stmp" arg1="{quote.price.last}" arg2="{quote.price.open}" />
+      <Double.Decimal var="quote.price.change" arg1="{stmp}" fmt="N3" />
+      <If.Contain arg1="{ticker}" arg2="^">
+        <Then>
+          <!-- that's an index -->
+          <String.Assign var="quote.price.bid" string="NaN" />
+          <String.Assign var="quote.price.ask" string="NaN" />
+          <String.Assign var="quote.price.high" string="NaN" />
+          <String.Assign var="quote.price.low" string="NaN" />
+          <String.Assign var="quote.volume.total" string="NaN" />
+        </Then>
+        <Else>
+          <!-- get bid price -->
+          <Xml.InnerText var="stmp" doc="page" path="{root_1}\tr(6)\{colm}" />
+          <String.Split var="split2" string="{stmp}" tokens=" x" />
+          <String.Replace var="stmp" string="{split2[0]}" old_string="N/A" new_string="NaN" />
+          <Double.Decimal var="quote.price.bid" arg1="{stmp}" fmt="N3" />
+          <!-- get bid price -->
+          <Xml.InnerText var="stmp" doc="page" path="{root_1}\tr(7)\{colm}" />
+          <String.Split var="split3" string="{stmp}" tokens=" x" />
+          <String.Replace var="stmp" string="{split3[0]}" old_string="N/A" new_string="NaN" />
+          <Double.Decimal var="quote.price.ask" arg1="{stmp}" fmt="N3" />
+          <!-- get high/low price -->
+          <Xml.InnerText var="stmp" doc="page" path="{root_2}\tr(1)\{colm}" />
+          <String.Split var="split4" string="{stmp}" tokens=" -" />
+          <If.Equal arg1="{split4[1]}" arg2="(null)">
+            <Then>
+              <String.Assign var="quote.price.high" string="NaN" />
+              <String.Assign var="quote.price.low" string="NaN" />
+            </Then>
+            <Else>
+              <String.Replace var="stmp" string="{split4[1]}" old_string="N/A" new_string="NaN" />
+              <Double.Decimal var="quote.price.high" arg1="{stmp}" fmt="N3" />
+              <String.Replace var="stmp" string="{split4[0]}" old_string="N/A" new_string="NaN" />
+              <Double.Decimal var="quote.price.low" arg1="{stmp}" fmt="N3" />
+            </Else>
+          </If.Equal>
+          <!-- get volume -->
+          <Xml.InnerText var="stmp" doc="page" path="{root_2}\tr(3)\{colm}" />
+          <Double.Decimal var="quote.volume.total" arg1="{stmp}" fmt="N0" />
+        </Else>
+      </If.Contain>
+      <!-- add quote to result list -->
+      <List.AddQuote />
+      <List.TrimToSize />
+      <!-- set Culture -->
+      <String.Culture culture="en-US" />
+    </quote>
+    <lookup args="server,mode,lookup">
+      <!-- clear result list -->
+      <List.Clear />
+      <!-- get state -->
+      <String.Split var="split0" string="{mode}" tokens=" " />
+      <String.Assign var="state" string="{split0[0]}" />
+      <!-- set culture -->
+      <If.Switch arg1="{state}">
+        <If.Case name="Germany">
+          <String.Culture culture="de-DE" />
+          <String.Assign var="site" string="de.finsearch.yahoo.com/de/?s=de_sort" />
+          <String.Assign var="sufx" string="DE" />
+        </If.Case>
+        <If.Case name="Italy">
+          <String.Culture culture="it-IT" />
+          <String.Assign var="site" string="it.finsearch.yahoo.com/it/?s=it_sort" />
+          <String.Assign var="sufx" string="MI" />
+        </If.Case>
+      </If.Switch>
+      <!-- download page -->
+      <Web.DownloadXml var="page" url="http://{site}&amp;tp=S&amp;nm={lookup}&amp;r=*" />
+      <Loop.For var="i" start="2" end="1000" incr="1">
+        <!-- get root node -->
+        <String.Assign var="root" string="body\center\p\p\table\tr\td\table(4)\tr\td\br\center\br\BR\br\br\table(3)\tr\td\table\tr({i})" />
+        <!-- get stock name -->
+        <Xml.InnerText var="stmp" doc="page" path="{root}\td(1)" />
+        <Loop.BreakIfEqual arg1="{stmp}" arg2="(null)" />
+        <String.Replace var="stmp" string="{stmp}" old_string="(" new_string="[" />
+        <String.Replace var="name" string="{stmp}" old_string=")" new_string="]" />
+        <!-- get stock-exchange name -->
+        <Xml.InnerText var="stmp" doc="page" path="{root}\td(5)" />
+        <Loop.BreakIfEqual arg1="{stmp}" arg2="(null)" />
+        <String.Assign var="exchange" string="{stmp}" />
+        <!-- get stock ticker -->
+        <Xml.InnerText var="stmp" doc="page" path="{root}\td(2)" />
+        <Loop.BreakIfEqual arg1="{stmp}" arg2="(null)" />
+        <String.Assign var="ticker" string="{stmp}" />
+        <!-- add string to result list -->
+        <List.AddString string="{name} [{exchange}] ({ticker})" />
+      </Loop.For>
+      <!-- trim result list -->
+      <List.TrimToSize />
+      <!-- set Culture -->
+      <String.Culture culture="en-US" />
+    </lookup>
+    <options args="server,mode,ticker">
+      <!-- clear result list -->
+      <List.Clear />
+      <!-- get state -->
+      <String.Split var="split0" string="{mode}" tokens=" " />
+      <String.Assign var="state" string="{split0[0]}" />
+      <!-- set culture -->
+      <If.Switch arg1="{state}">
+        <If.Case name="Germany">
+          <String.Assign var="site" string="de.finance.yahoo.com" />
+          <String.Assign var="sufx" string="DE" />
+          <String.Assign var="call_tb" string="7" />
+          <String.Assign var="put_tb" string="11" />
+        </If.Case>
+        <If.Case name="Italy">
+          <String.Assign var="site" string="it.finance.yahoo.com" />
+          <String.Assign var="sufx" string="MI" />
+          <String.Assign var="call_tb" string="4" />
+          <String.Assign var="put_tb" string="8" />
+        </If.Case>
+      </If.Switch>
+      <String.Culture culture="en-US" />
+      <!-- init start date -->
+      <DateTime.Now var="option.expiration" fmt="1-MMM-yy" />
+      <Loop.For var="u" start="1" end="12" incr="1">
+        <!-- get the exact expiration date -->
+        <String.Culture culture="en-US" />
+        <String.Split var="split1" string="{option.expiration}" tokens="-" />
+        <DateTime.Parse var="stmp" string="1-{split1[1]}-{split1[2]}" fmt="ddd" />
+        <If.Switch arg1="{stmp}">
+          <If.Case name="Sun">
+            <DateTime.Parse var="option.expiration" string="21-{split1[1]}-{split1[2]}" fmt="dd-MMM-yy" />
+          </If.Case>
+          <If.Case name="Mon">
+            <DateTime.Parse var="option.expiration" string="20-{split1[1]}-{split1[2]}" fmt="dd-MMM-yy" />
+          </If.Case>
+          <If.Case name="Tue">
+            <DateTime.Parse var="option.expiration" string="19-{split1[1]}-{split1[2]}" fmt="dd-MMM-yy" />
+          </If.Case>
+          <If.Case name="Wed">
+            <DateTime.Parse var="option.expiration" string="18-{split1[1]}-{split1[2]}" fmt="dd-MMM-yy" />
+          </If.Case>
+          <If.Case name="Thu">
+            <DateTime.Parse var="option.expiration" string="17-{split1[1]}-{split1[2]}" fmt="dd-MMM-yy" />
+          </If.Case>
+          <If.Case name="Fri">
+            <DateTime.Parse var="option.expiration" string="16-{split1[1]}-{split1[2]}" fmt="dd-MMM-yy" />
+          </If.Case>
+          <If.Case name="Sat">
+            <DateTime.Parse var="option.expiration" string="22-{split1[1]}-{split1[2]}" fmt="dd-MMM-yy" />
+          </If.Case>
+        </If.Switch>
+        <!-- get page -->
+        <DateTime.Parse var="stmp" string="{option.expiration}" fmt="MM-yyyy" />
+        <Loop.Sleep sleep="250" />
+        <If.Contain arg1="{ticker}" arg2=".">
+          <Then>
+            <Web.DownloadXml var="page" url="http://{site}/q/wa?s={ticker}&amp;r={u}" />
+          </Then>
+          <Else>
+            <Web.DownloadXml var="page" url="http://{site}/q/wa?s={ticker}.{sufx}&amp;r={u}" />
+          </Else>
+        </If.Contain>
+        <If.Switch arg1="{state}">
+          <If.Case name="Germany">
+            <String.Culture culture="de-DE" />
+            <Xml.InnerText var="stmp" doc="page" path="body\div\div(3)\br\table\tr(2)\td\table(5)\tr\td(2)" />
+          </If.Case>
+          <If.Case name="Italy">
+            <String.Culture culture="it-IT" />
+            <Xml.InnerText var="stmp" doc="page" path="body\div\div(3)\br\table\tr(2)\td\b(2)" />
+          </If.Case>
+        </If.Switch>
+        <!-- check month -->
+        <If.Equal arg1="{u}" arg2="1">
+          <Then>
+            <String.Assign var="first_month" string="{stmp}" />
+            <String.Assign var="current_month" string="" />
+          </Then>
+          <Else>
+            <String.Assign var="current_month" string="{stmp}" />
+          </Else>
+        </If.Equal>
+        <Loop.BreakIfEqual arg1="{first_month}" arg2="{current_month}" />
+        <!-- ticker and update time -->
+        <String.Assign var="option.stock" string="{ticker}" />
+        <DateTime.Now var="option.update_timestamp" />
+        <Loop.For var="i" start="0" end="1" incr="1">
+          <If.Equal arg1="{i}" arg2="0">
+            <Then>
+              <!-- calls -->
+              <String.Assign var="option.type" string="Call" />
+              <String.Assign var="root" string="body\div\div(3)\br\table\tr(2)\td\table({call_tb})\tr\td\table" />
+            </Then>
+            <Else>
+              <!-- puts -->
+              <String.Assign var="option.type" string="Put" />
+              <String.Assign var="root" string="body\div\div(3)\br\table\tr(2)\td\table({put_tb})\tr\td\table" />
+            </Else>
+          </If.Equal>
+          <Debug.Trace dbg="option.type: {option.type}" />
+          <!-- root path -->
+          <Xml.InnerText var="stmp" doc="page" path="{root}\tr(1)\td(1)" />
+          <Loop.BreakIfEqual arg1="{stmp}" arg2="(null)" />
+          <If.Contain arg1="{stmp}" arg2="Strike">
+            <Then>
+              <Loop.For var="l" start="2" end="1000" incr="1">
+                <!-- stock exchange -->
+                <Xml.InnerText var="stmp" doc="page" path="{root}\tr({l}\td(3)" />
+                <Loop.BreakIfEqual arg1="{stmp}" arg2="(null)" />
+                <If.Switch arg1="{state}">
+                  <If.Case name="Germany"></If.Case>
+                  <If.Case name="Italy">
+                    <String.Assign var="stmp" string="{mode}" />
+                  </If.Case>
+                </If.Switch>
+                <If.Contain arg1="{mode}" arg2="{stmp}">
+                  <Then>
+                    <Loop.For var="j" start="1" end="8" incr="1">
+                      <Xml.InnerText var="stmp" doc="page" path="{root}\tr({l}\td({j})" />
+                      <String.Replace var="stmp" string="{stmp}" old_string="€" new_string="" />
+                      <String.Replace var="stmp" string="{stmp}" old_string="N/A" new_string="NaN" />
+                      <String.Replace var="stmp" string="{stmp}" old_string="ND" new_string="NaN" />
+                      <String.Replace var="stmp" string="{stmp}" old_string="&amp;nbsp;" new_string="" />
+                      <String.Trim var="stmp" string="{stmp}" />
+                      <String.Assign var="x" string="{j}" />
+                      <If.Switch arg1="{state}">
+                        <If.Case name="Germany"></If.Case>
+                        <If.Case name="Italy">
+                          <String.Replace var="stmp" string="{stmp}" old_string="ND" new_string="NaN" />
+                          <If.Switch arg1="{x}">
+                            <If.Case name="1">
+                              <String.Assign var="x" string="1" />
+                            </If.Case>
+                            <If.Case name="2">
+                              <String.Assign var="x" string="2" />
+                            </If.Case>
+                            <If.Case name="3">
+                              <String.Assign var="x" string="4" />
+                            </If.Case>
+                            <If.Case name="4">
+                              <String.Assign var="x" string="5" />
+                            </If.Case>
+                            <If.Case name="5">
+                              <String.Assign var="x" string="6" />
+                            </If.Case>
+                            <If.Case name="6">
+                              <String.Assign var="x" string="7" />
+                            </If.Case>
+                            <If.Case name="7">
+                              <String.Assign var="x" string="8" />
+                            </If.Case>
+                            <If.Case name="8">
+                              <String.Assign var="x" string="3" />
+                            </If.Case>
+                          </If.Switch>
+                        </If.Case>
+                      </If.Switch>
+                      <If.Switch arg1="{x}">
+                        <If.Case name="1">
+                          <Double.Decimal var="option.strike" fmt="N4" arg1="{stmp}" />
+                          <Debug.Trace dbg="option.strike: {option.strike}" />
+                        </If.Case>
+                        <If.Case name="2">
+                          <String.Assign var="option.symbol" string="{stmp}" />
+                          <Debug.Trace dbg="option.symbol: {option.symbol}" />
+                        </If.Case>
+                        <If.Case name="3"></If.Case>
+                        <If.Case name="4">
+                          <Double.Decimal var="option.price.last" fmt="N4" arg1="{stmp}" />
+                          <Debug.Trace dbg="option.price.last: {option.price.last}" />
+                        </If.Case>
+                        <If.Case name="5">
+                          <String.Split var="split2" string="{stmp}" tokens="( )" />
+                          <String.Assign var="stmp" string="{split2[0]}" />
+                          <String.Replace var="stmp" string="{stmp}" old_string="NaN" new_string="0" />
+                          <Xml.Attribute var="salt" doc="page" path="{root}\tr({l}\td({j})\nobr\img" attr="alt" />
+                          <If.Contain arg1="{salt}" arg2="Down">
+                            <Then>
+                              <String.Assign var="option.price.change" string="-{stmp}" />
+                            </Then>
+                            <Else>
+                              <String.Assign var="option.price.change" string="{stmp}" />
+                            </Else>
+                          </If.Contain>
+                          <Debug.Trace dbg="option.price.change: {option.price.change}" />
+                        </If.Case>
+                        <If.Case name="6">
+                          <Double.Decimal var="option.price.bid" fmt="N4" arg1="{stmp}" />
+                          <Debug.Trace dbg="option.price.bid: {option.price.bid}" />
+                        </If.Case>
+                        <If.Case name="7">
+                          <Double.Decimal var="option.price.ask" fmt="N4" arg1="{stmp}" />
+                          <Debug.Trace dbg="option.price.ask: {option.price.ask}" />
+                        </If.Case>
+                        <If.Case name="8">
+                          <Double.Decimal var="option.volume.total" fmt="N0" arg1="{stmp}" />
+                          <Debug.Trace dbg="option.volume.total: {option.volume.total}" />
+                        </If.Case>
+                      </If.Switch>
+                    </Loop.For>
+                    <!-- multiply prices by 10 -->
+                    <Double.Multiply var="option.price.ask" fmt="N4" arg1="{option.price.ask}" arg2="10" />
+                    <Double.Multiply var="option.price.bid" fmt="N4" arg1="{option.price.bid}" arg2="10" />
+                    <Double.Multiply var="option.price.last" fmt="N4" arg1="{option.price.last}" arg2="10" />
+                    <Double.Multiply var="option.price.change" fmt="N4" arg1="{option.price.change}" arg2="10" />
+                    <!-- open int is not available -->
+                    <Double.Decimal var="option.open_int" fmt="N0" arg1="1" />
+                    <String.Assign var="option.stocks_per_contract" string="10" />
+                    <!-- add string to result list -->
+                    <Loop.BreakIfEqual arg1="{option.symbol}" arg2="(null)" />
+                    <List.AddOption />
+                    <Debug.Trace dbg="  option={option.type} {option.symbol} {option.open_int}" />
+                  </Then>
+                  <Else></Else>
+                </If.Contain>
+              </Loop.For>
+            </Then>
+            <Else></Else>
+          </If.Contain>
+        </Loop.For>
+        <!-- type loop -->
+        <String.Culture culture="en-US" />
+        <DateTime.AddDays var="option.expiration" date="{option.expiration}" days="31" fmt="dd-MMM-yy" />
+      </Loop.For>
+      <!-- month loop -->
+      <!-- trim result list -->
+      <List.TrimToSize />
+      <!-- set Culture -->
+      <String.Culture culture="en-US" />
+    </options>
+    <volatility args="server,mode,ticker">
+      <!-- clear result list -->
+      <List.Clear />
+      <!-- add string to result list -->
+      <List.AddString string="NaN" />
+    </volatility>
+    <history args="server,mode,ticker,start,end">
+      <!-- clear result list -->
+      <List.Clear />
+      <!-- start date -->
+      <DateTime.Day var="sd" string="{start}" />
+      <DateTime.Month var="stmp" string="{start}" />
+      <Double.Subtract var="sm" arg1="{stmp}" arg2="1" />
+      <DateTime.Year var="sy" string="{start}" />
+      <!-- end date -->
+      <DateTime.Day var="ed" string="{end}" />
+      <DateTime.Month var="stmp" string="{end}" />
+      <Double.Subtract var="em" arg1="{stmp}" arg2="1" />
+      <DateTime.Year var="ey" string="{end}" />
+      <!-- get state -->
+      <String.Split var="split0" string="{mode}" tokens=" " />
+      <String.Assign var="state" string="{split0[0]}" />
+      <!-- set culture -->
+      <If.Switch arg1="{state}">
+        <If.Case name="Germany">
+          <String.Assign var="site" string="de.finance.yahoo.com" />
+          <String.Assign var="sufx" string="DE" />
+          <String.Assign var="call_tb" string="7" />
+          <String.Assign var="put_tb" string="11" />
+        </If.Case>
+        <If.Case name="Italy">
+          <String.Assign var="site" string="it.finance.yahoo.com" />
+          <String.Assign var="sufx" string="MI" />
+          <String.Assign var="call_tb" string="4" />
+          <String.Assign var="put_tb" string="8" />
+        </If.Case>
+      </If.Switch>
+      <!-- download page -->
+      <If.Contain arg1="{ticker}" arg2=".">
+        <Then>
+          <Web.DownloadHtml var="page" url="http://ichart.yahoo.com/table.csv?s={ticker}&amp;d={em}&amp;e={ed}&amp;f={ey}&amp;g=d&amp;a={sm}&amp;b={sd}&amp;c={sy}&amp;ignore=.csv" />
+        </Then>
+        <Else>
+          <Web.DownloadHtml var="page" url="http://ichart.yahoo.com/table.csv?s={ticker}.{sufx}&amp;d={em}&amp;e={ed}&amp;f={ey}&amp;g=d&amp;a={sm}&amp;b={sd}&amp;c={sy}&amp;ignore=.csv" />
+        </Else>
+      </If.Contain>
+      <!-- stock symbol -->
+      <String.Assign var="history.stock" string="{ticker}" />
+      <Loop.TryCatch>
+        <!-- split CSV to rows -->
+        <String.Split var="split1" string="{page}" tokens="&#xA;&#xD;" />
+        <Loop.For var="i" start="1" end="{split1.Length}" incr="1">
+          <!-- split CSV rows to columns -->
+          <String.Split var="split2" string="{split1[{i}]}" tokens="," />
+          <!-- date -->
+          <DateTime.Parse var="history.date" string="{split2[0]}" fmt="dd-MMM-yy" />
+          <!-- open price -->
+          <String.Replace var="stmp" string="{split2[1]}" old_string="N/A" new_string="NaN" />
+          <Double.Decimal var="history.price.open" arg1="{stmp}" fmt="N3" />
+          <!-- high price -->
+          <String.Replace var="stmp" string="{split2[2]}" old_string="N/A" new_string="NaN" />
+          <Double.Decimal var="history.price.high" arg1="{stmp}" fmt="N3" />
+          <!-- low price -->
+          <String.Replace var="stmp" string="{split2[3]}" old_string="N/A" new_string="NaN" />
+          <Double.Decimal var="history.price.low" arg1="{stmp}" fmt="N3" />
+          <!-- close price -->
+          <String.Replace var="stmp" string="{split2[4]}" old_string="N/A" new_string="NaN" />
+          <Double.Decimal var="history.price.close" arg1="{stmp}" fmt="N3" />
+          <!-- adj. close price -->
+          <String.Replace var="stmp" string="{split2[6]}" old_string="N/A" new_string="NaN" />
+          <Double.Decimal var="history.price.close_adj" arg1="{stmp}" fmt="N3" />
+          <!-- volume -->
+          <String.Replace var="stmp" string="{split2[5]}" old_string="N/A" new_string="NaN" />
+          <Double.Decimal var="history.volume.total" arg1="{stmp}" fmt="N0" />
+          <!-- add history to result list -->
+          <List.AddHistory />
+        </Loop.For>
+      </Loop.TryCatch>
+    </history>
+  </server>
+</parser>
